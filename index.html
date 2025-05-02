@@ -13,11 +13,11 @@
     <title>پورتفولیو - برهان مرتضوی</title>
 </head>
 <body>
-    <main class="2xl:w-[1400px]">
+    <main class="2xl:w-[1400px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]">
     <header>
         <div class="bento flex flex-row items-center justify-between bg-white p-4 rounded-lg my-4">
             <div class="logo flex flex-1 justify-start items-center">
-                <img src="./src/img/logo-gradient.svg" alt="portfolio logo" class="w-24">
+                <img src="./src/img/logo-gradient.svg" alt="portfolio logo" class="w-12">
                 <span>پورتفولیو</span>
             </div>
 
@@ -27,18 +27,6 @@
                         <a href="#" class="flex items-center justify-center gap-2">
                             <i class="fa-solid fa-house"></i>
                             <span class="menu_item">خانه</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <span class="menu_item">درباره</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-layer-group"></i>
-                            <span class="menu_item">خدمات</span>
                         </a>
                     </li>
                     <li>
@@ -62,23 +50,36 @@
             </div>
         </div>
     </header>
-    <div class="bentogrid">
-        <div class="grid container">
-            <div class="top">
-                <div class="introduction bento"></div>
-                <div class="mid-column">
-                    <div class="education bento"></div>
-                    <div class="experience bento"></div>
+    <div class="bentogrid flex gap-4 xl:flex-row flex-col h-[100vh]">
+        <div class="right flex xl:flex-2 lg:flex-col gap-4  flex-col">
+            <div class="top flex-2 flex lg:flex-row gap-4 flex-col">
+                <div class="introduction bg-white rounded-lg flex-1">
+                    introduction
                 </div>
-                <div class="skills bento"></div>
+                <div class="experience flex-1 flex flex-col gap-4">
+                    <div class="education bg-white rounded-lg flex-1">education</div>
+                    <div class="work bg-white rounded-lg flex-1">work</div>
+                </div>
             </div>
-            <div class="bottom">
-                <div class="portfolio bento"></div>
-                <div class="lastposts bento"></div>
-            </div>
+            <div class="portfolio-items flex-1 bg-white rounded-lg">portfolio items</div>
+        </div>
+        <div class="left flex flex-1 flex-col gap-4 ">
+            <div class="skills flex-2 bg-white rounded-lg">skills</div>
+            <div class="latest flex-1 bg-white rounded-lg">latest blogs</div>
         </div>
     </div>
-    <footer></footer>
+    <footer class="flex flex-col-reverse items-center justify-center mt-8 mb-4 lg:flex-row gap-4 lg:justify-between">
+        <span class="copy-right">طراحی و اجرا توسط تیم توسعه ناجینو - 1404</span>
+        <div class="socials flex flex-row gap-4">
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+
+
+        </div>
+    </footer>
     </main>
 </body>
 </html>
