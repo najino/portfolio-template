@@ -1,32 +1,39 @@
 *{
     box-sizing: border-box;
-
     font-family: 'Yekan Bakh';
     color: var(--text-color);
 }
 
 :root {
-  --bg-color: #dadada;
+  --bg-color: #eeeeee;
+  --gradient-color: #c5c5c5;
   --text-color: #1f2937;
   --link-color: #1a73e8;
-  --bento-color: rgba(0, 0, 0, 0.1);
+  --bento-color: #07070e4f;
   --darkbtn-color: #1e3a8a;
+  --star-color: #313168;
 }
 
 html.dark {
-  --bg-color: #151515;
+  --bg-color: #1b2735;
+  --gradient-color: #07070E;
   --text-color: #e5e7eb;
   --link-color: #8ab4f8;
-  --bento-color: rgba(255, 255, 255, 0.055);
+  --bento-color: #07070e4f;
   --darkbtn-color: #ca8a04;
+  --star-color: #fff;
 }
 
 
 body{
-    background-color: var(--bg-color);
+  width: 100vw;
+  min-height: 100vh;
+    	background: radial-gradient(circle at top, var(--bg-color) 0%, var(--gradient-color) 100%);
+      background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 ul{
@@ -47,147 +54,553 @@ a:hover {
     color: inherit;
   }
 
-.bento{
-  /* Glassmorphism base styles */
-  background: var(--bento-color);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.07);
-
-  /* CSS variable for dynamic glow intensity */
-  --glow-intensity: 0;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.bento:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 15px rgba(255, 255, 255, calc(0.15 + var(--glow-intensity) * 0.5));
-}
-
-/* Additional glow effect using a pseudo element */
-.bento::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  pointer-events: none;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, calc(0.1 + var(--glow-intensity) * 0.5)) 0%, transparent 60%);
-  opacity: 0.5;
-  transition: background 0.1s ease;
-  border-radius: 15px;
-  mix-blend-mode: screen;
-}
-
-#background-circles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -10;
-}
-
-.background-circle {
-  position: absolute;
-  border-radius: 100%;
-  filter: blur(100px);
-  opacity: 0.5;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.background-circle-1 {
-  width: 300px;
-  height: 300px;
-  background: #7444e4;
-  top: 5%;
-  left: 15%;
-  animation-name: move1;
-  animation-duration: 20s;
-}
-
-.background-circle-2 {
-  width: 300px;
-  height: 300px;
-  background: #7444e4;
-  top: 50%;
-  left: 70%;
-  animation-name: move2;
-  animation-duration: 15s;
-}
-
-.background-circle-3 {
-  width: 300px;
-  height: 300px;
-  background: #7444e4;
-  top: 70%;
-  left: 30%;
-  animation-name: move3;
-  animation-duration: 20s;
-}
-
-.background-circle-4 {
-  width: 300px;
-  height: 300px;
-  background: #7444e4;
-  top: 10%;
-  left: 85%;
-  animation-name: move4;
-  animation-duration: 15s;
-}
-
-@keyframes move1 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(100px, 200px);
-  }
-}
-
-@keyframes move2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-400px, 300px);
-  }
-}
-
-@keyframes move3 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(200px, -300px);
-  }
-}
-
-@keyframes move4 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-250px, 250px);
-  }
-}
-
-
-.bento-space{
-  height: 100%;
-  width: 100%;
-  padding: 2em;
-}
-
 .darkmodebtn{
   color: var(--darkbtn-color);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    color: #888;
+    z-index: 2;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-option.active {
+    color: #fff;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #44445a;
+    border-radius: 1em;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+
+
+
+/* Font Face Import */
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-ThinExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ThinExtraCondensed.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-LightExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-LightExtraCondensed.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-RegularExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-RegularExtraCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-SemiBoldExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBoldExtraCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-BoldExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BoldExtraCondensed.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-ExtraBoldExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBoldExtraCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-BlackExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BlackExtraCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraCondensed;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: extra-condensed;
+	src: url('woff/YekanBakhFaNum-ExtraBlackExtraCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlackExtraCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-ThinCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ThinCondensed.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-LightCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-LightCondensed.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-RegularCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-RegularCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-SemiBoldCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBoldCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-BoldCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BoldCondensed.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-ExtraBoldCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBoldCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-BlackCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BlackCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Condensed;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: condensed;
+	src: url('woff/YekanBakhFaNum-ExtraBlackCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlackCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-ThinSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ThinSemiCondensed.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-LightSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-LightSemiCondensed.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-RegularSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-RegularSemiCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-SemiBoldSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBoldSemiCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-BoldSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BoldSemiCondensed.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-ExtraBoldSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBoldSemiCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-BlackSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BlackSemiCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiCondensed;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: semi-condensed;
+	src: url('woff/YekanBakhFaNum-ExtraBlackSemiCondensed.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlackSemiCondensed.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-Thin.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-Thin.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-Light.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-Light.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-Regular.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-Regular.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-SemiBold.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBold.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-Bold.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-Bold.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-ExtraBold.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBold.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-Black.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-Black.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: normal;
+	src: url('woff/YekanBakhFaNum-ExtraBlack.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlack.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-ThinSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ThinSemiExpanded.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-LightSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-LightSemiExpanded.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-RegularSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-RegularSemiExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-SemiBoldSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBoldSemiExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-BoldSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BoldSemiExpanded.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-ExtraBoldSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBoldSemiExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-BlackSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BlackSemiExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum SemiExpanded;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: semi-expanded;
+	src: url('woff/YekanBakhFaNum-ExtraBlackSemiExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlackSemiExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-ThinExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ThinExpanded.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-LightExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-LightExpanded.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-RegularExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-RegularExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-SemiBoldExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBoldExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-BoldExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BoldExpanded.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-ExtraBoldExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBoldExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-BlackExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BlackExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum Expanded;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: expanded;
+	src: url('woff/YekanBakhFaNum-ExtraBlackExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlackExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: 100;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-ThinExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ThinExtraExpanded.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-LightExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-LightExtraExpanded.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-RegularExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-RegularExtraExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-SemiBoldExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-SemiBoldExtraExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-BoldExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BoldExtraExpanded.woff2') format('woff2'); 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-ExtraBoldExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBoldExtraExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-BlackExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-BlackExtraExpanded.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: Yekan Bakh FaNum ExtraExpanded;
+	font-style: normal;
+	font-weight: 950;
+	font-stretch: extra-expanded;
+	src: url('woff/YekanBakhFaNum-ExtraBlackExtraExpanded.woff') format('woff'),   
+	url('woff2/YekanBakhFaNum-ExtraBlackExtraExpanded.woff2') format('woff2');		 
 }

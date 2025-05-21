@@ -29,55 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
       updateButton();
     });
 
-    // Add blurred colorful circles to background
-    const backgroundCirclesContainer = document.getElementById('background-circles');
-
-    const circlesData = [
-      { className: 'background-circle-1' },
-      { className: 'background-circle-2' },
-      { className: 'background-circle-3' },
-      { className: 'background-circle-4' },
-    ];
-
-    circlesData.forEach(data => {
-      const circle = document.createElement('div');
-      circle.classList.add('background-circle', data.className);
-      backgroundCirclesContainer.appendChild(circle);
-    });
-
-    // Restore previous dynamic glow effect on .bento divs
-    const bentos = document.querySelectorAll('.bento');
-
-    bentos.forEach(bento => {
-      bento.addEventListener('mousemove', (e) => {
-        const rect = bento.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        // Calculate percentage position of mouse within the div
-        const xPercent = (x / rect.width) * 100;
-        const yPercent = (y / rect.height) * 100;
-
-        // Calculate glow intensity based on distance from center (optional)
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const distX = Math.abs(x - centerX);
-        const distY = Math.abs(y - centerY);
-        const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);
-        const dist = Math.sqrt(distX * distX + distY * distY);
-        const glowIntensity = 1 - dist / maxDist; // closer to center = higher intensity
-
-        // Update CSS variables for glow intensity and mouse position
-        bento.style.setProperty('--glow-intensity', glowIntensity.toFixed(2));
-        bento.style.setProperty('--mouse-x', xPercent + '%');
-        bento.style.setProperty('--mouse-y', yPercent + '%');
-      });
-
-      bento.addEventListener('mouseleave', () => {
-        // Reset glow intensity and mouse position on mouse leave
-        bento.style.setProperty('--glow-intensity', 0);
-        bento.style.setProperty('--mouse-x', '50%');
-        bento.style.setProperty('--mouse-y', '50%');
-      });
-    });
 });
+
+        const toggleSwitch = document.querySelector('.toggle-switch');
+        const lightOption = document.getElementById('light');
+        const darkOption = document.getElementById('dark');
+        const slider = document.querySelector('.toggle-slider');
+
+        toggleSwitch.addEventListener('click', () => {
+            if (lightOption.classList.contains('active')) {
+                lightOption.classList.remove('active');
+                darkOption.classList.add('active');
+                slider.style.transform = 'translateX(100%)';
+            } else {
+                darkOption.classList.remove('active');
+                lightOption.classList.add('active');
+                slider.style.transform = 'translateX(0)';
+            }
+        });
