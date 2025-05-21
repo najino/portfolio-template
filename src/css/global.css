@@ -2,11 +2,25 @@
     box-sizing: border-box;
 
     font-family: 'Yekan Bakh';
+    color: var(--text-color);
 }
 
 :root {
-    --bg-color: #3498db;
-  }
+  --bg-color: #dadada;
+  --text-color: #1f2937;
+  --link-color: #1a73e8;
+  --bento-color: rgba(0, 0, 0, 0.1);
+  --darkbtn-color: #1e3a8a;
+}
+
+html.dark {
+  --bg-color: #151515;
+  --text-color: #e5e7eb;
+  --link-color: #8ab4f8;
+  --bento-color: rgba(255, 255, 255, 0.055);
+  --darkbtn-color: #ca8a04;
+}
+
 
 body{
     background-color: var(--bg-color);
@@ -33,3 +47,147 @@ a:hover {
     color: inherit;
   }
 
+.bento{
+  /* Glassmorphism base styles */
+  background: var(--bento-color);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.07);
+
+  /* CSS variable for dynamic glow intensity */
+  --glow-intensity: 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, calc(0.15 + var(--glow-intensity) * 0.5));
+}
+
+/* Additional glow effect using a pseudo element */
+.bento::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, calc(0.1 + var(--glow-intensity) * 0.5)) 0%, transparent 60%);
+  opacity: 0.5;
+  transition: background 0.1s ease;
+  border-radius: 15px;
+  mix-blend-mode: screen;
+}
+
+#background-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.background-circle {
+  position: absolute;
+  border-radius: 100%;
+  filter: blur(100px);
+  opacity: 0.5;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.background-circle-1 {
+  width: 300px;
+  height: 300px;
+  background: #7444e4;
+  top: 5%;
+  left: 15%;
+  animation-name: move1;
+  animation-duration: 20s;
+}
+
+.background-circle-2 {
+  width: 300px;
+  height: 300px;
+  background: #7444e4;
+  top: 50%;
+  left: 70%;
+  animation-name: move2;
+  animation-duration: 15s;
+}
+
+.background-circle-3 {
+  width: 300px;
+  height: 300px;
+  background: #7444e4;
+  top: 70%;
+  left: 30%;
+  animation-name: move3;
+  animation-duration: 20s;
+}
+
+.background-circle-4 {
+  width: 300px;
+  height: 300px;
+  background: #7444e4;
+  top: 10%;
+  left: 85%;
+  animation-name: move4;
+  animation-duration: 15s;
+}
+
+@keyframes move1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 200px);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-400px, 300px);
+  }
+}
+
+@keyframes move3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(200px, -300px);
+  }
+}
+
+@keyframes move4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-250px, 250px);
+  }
+}
+
+
+.bento-space{
+  height: 100%;
+  width: 100%;
+  padding: 2em;
+}
+
+.darkmodebtn{
+  color: var(--darkbtn-color);
+}

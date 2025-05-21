@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/global.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Global css -->
+    <link rel="stylesheet" href="./src/css/global.css" />
+    <!-- homepage only css -->
+    <link rel="stylesheet" href="./src/css/home.css" />
     <!-- Font Faces Import -->
-    <link rel="stylesheet" href="./src/font/fontiran.css">
+    <link rel="stylesheet" href="./src/font/fontiran.css" />
     <!-- Tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- FontAwesome cdn -->
-    <script src="https://kit.fontawesome.com/f6702b6448.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f6702b6448.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Actions JS File -->
+    <script src="./src/js/index.js"></script>
+
     <title>پورتفولیو - برهان مرتضوی</title>
-</head>
-<body>
-    <main class="2xl:w-[1400px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]">
-    <header>
-        <div class="bento flex flex-row items-center justify-between bg-white p-4 rounded-lg my-4">
-            <div class="logo flex flex-1 justify-start items-center">
-                <img src="./src/img/logo-gradient.svg" alt="portfolio logo" class="w-12">
-                <span>پورتفولیو</span>
-            </div>
+  </head>
+  <body>
+    <div id="background-circles" class="fixed inset-0 -z-10 overflow-hidden"></div>
+    <main
+      class="2xl:w-[1450px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]"
+    >
+      <header>
+        <div
+          class=" bento flex flex-row items-center justify-between bg-white p-4 rounded-lg my-4"
+        >
+          <div class="logo flex flex-1 justify-start items-center">
+            <img
+              src="./src/img/logo-gradient.svg"
+              alt="portfolio logo"
+              class="w-12"
+            />
+            <span>پورتفولیو</span>
+          </div>
 
-            <nav class="menu flex flex-2 justify-center">
-                <ul class="flex flex-row gap-8">
-                    <li>
-                        <a href="#" class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-house"></i>
-                            <span class="menu_item">خانه</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-folder-open"></i>
-                            <span class="menu_item">پروژه‌ها</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-newspaper"></i>
-                            <span class="menu_item">وبلاگ</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+          <nav class="menu flex flex-2 justify-center">
+            <ul class="flex flex-row gap-8">
+              <li>
+                <a href="#" class="flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-house"></i>
+                  <span class="menu_item">خانه</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-folder-open"></i>
+                  <span class="menu_item">پروژه‌ها</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-newspaper"></i>
+                  <span class="menu_item">وبلاگ</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-            <div class="buttons flex flex-1 justify-end">
-                test
-                test
+          <div class="buttons flex flex-1 justify-end gap-4 items-center">
+            <button
+              id="darkModeToggle"
+              class="cursor-pointer w-12 h-12 bg-neutral-200/20 hover:bg-neutral-200/40 rounded-full flex items-center gap-2 justify-center"
+            >
+              <i id="darkModeIcon" class="fa-solid fa-sun darkmodebtn"></i>
+            </button>
+            <a
+            href="#"
+              class="button px-7 py-4 bg-cyan-500/40 hover:bg-cyan-500/80 rounded flex items-center gap-2"
+            >
+            <span class="font-semibold text-sm">همکاری در پروژه</span>
+            <i class="fa-solid fa-handshake"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <div class="bentogrid flex gap-6 xl:flex-row flex-col h-[100vh]">
+        <div class="right flex xl:flex-2 lg:flex-col gap-6 flex-col">
+          <div class="top flex-2 flex lg:flex-row gap-6 flex-col">
+            <div class="introduction bg-white rounded-lg flex-1 bento">
+              <div class="bento-space">test</div>
             </div>
-        </div>
-    </header>
-    <div class="bentogrid flex gap-4 xl:flex-row flex-col h-[100vh]">
-        <div class="right flex xl:flex-2 lg:flex-col gap-4  flex-col">
-            <div class="top flex-2 flex lg:flex-row gap-4 flex-col">
-                <div class="introduction bg-white rounded-lg flex-1">
-                    introduction
-                </div>
-                <div class="experience flex-1 flex flex-col gap-4">
-                    <div class="education bg-white rounded-lg flex-1">education</div>
-                    <div class="work bg-white rounded-lg flex-1">work</div>
-                </div>
+            <div class="experience flex-1 flex flex-col gap-6">
+              <div class="education bg-white rounded-lg flex-1 bento"><div class="bento-space">test</div></div>
+              <div class="work bg-white rounded-lg flex-1 bento"><div class="bento-space">test</div></div>
             </div>
-            <div class="portfolio-items flex-1 bg-white rounded-lg">portfolio items</div>
+          </div>
+          <div class="portfolio-items flex-1 bg-white rounded-lg bento"><div class="bento-space">test</div></div>
         </div>
-        <div class="left flex flex-1 flex-col gap-4 ">
-            <div class="skills flex-2 bg-white rounded-lg">skills</div>
-            <div class="latest flex-1 bg-white rounded-lg">latest blogs</div>
+        <div class="left flex flex-1 flex-col gap-6">
+          <div class="skills flex-2 bg-white rounded-lg bento"><div class="bento-space">test</div></div>
+          <div class="latest flex-1 bg-white rounded-lg bento"><div class="bento-space">test</div></div>
         </div>
-    </div>
-    <footer class="flex flex-col-reverse items-center justify-center mt-8 mb-4 lg:flex-row gap-4 lg:justify-between">
-        <span class="copy-right">طراحی و اجرا توسط تیم توسعه ناجینو - 1404</span>
+      </div>
+      <footer
+        class="flex flex-col-reverse items-center justify-center mt-8 mb-4 lg:flex-row gap-4 lg:justify-between"
+      >
+        <span class="copy-right"
+          >طراحی و اجرا توسط تیم توسعه ناجینو - 1404</span
+        >
         <div class="socials flex flex-row gap-4">
-            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
-
-
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
-    </footer>
+      </footer>
     </main>
-</body>
+  </body>
 </html>
