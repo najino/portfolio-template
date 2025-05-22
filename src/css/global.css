@@ -18,7 +18,7 @@
 html.dark {
   --bg-color: #1b2735;
   --gradient-color: #07070e;
-  --text-color: #9fa0a1;
+  --text-color: #bebebe;
   --linkhover-color: #fff;
   --link-color: #8ab4f8;
   --bento-color: #00000036;
@@ -46,6 +46,10 @@ body {
   overflow-x: hidden;
 }
 
+.header{
+  color: var(--active-color);
+}
+
 ul {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
@@ -62,8 +66,10 @@ ul {
 
 .link{
   color: var(--text-color);
+  transition: 0.2s;
 }
 .link:hover{
+  transition: 0.2s;
   color: var(--linkhover-color);
 }
 a {
@@ -75,15 +81,18 @@ a {
 a:hover {
   cursor: pointer;
   text-decoration: none;
-  color: var(--linkhover-color);
+  color: inherit;
 }
 
 .bento {
   background-color: var(--bento-color);
   border-radius: 1em;
   backdrop-filter: blur(3px);
-  padding: 0.5em;
   border: 1px solid rgba(128, 128, 128, 0.178);
+}
+.bento-boxes{
+  padding: 1.4em;
+  color: var(--text-color);
 }
 
 .darkmodebtn {
