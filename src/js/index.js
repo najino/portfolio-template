@@ -1,49 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('darkModeToggle');
-    const darkModeIcon = document.getElementById('darkModeIcon');
     const htmlElement = document.documentElement;
 
-    function updateButton() {
-      if (htmlElement.classList.contains('dark')) {
-        darkModeIcon.classList.remove('fa-moon');
-        darkModeIcon.classList.add('fa-sun');
-      } else {
-        darkModeIcon.classList.remove('fa-sun');
-        darkModeIcon.classList.add('fa-moon');
-      }
-    }
-
-    // Load saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
+    // Load saved theme preference or set default to dark
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || !savedTheme) {
       htmlElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      htmlElement.classList.remove('dark');
     }
-    updateButton();
 
-    toggleButton.addEventListener('click', () => {
-      htmlElement.classList.toggle('dark');
-      if (htmlElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-      updateButton();
+    const toggleSwitch = document.querySelector('.toggle-switch');
+    const lightOption = document.getElementById('light');
+    const darkOption = document.getElementById('dark');
+    const slider = document.querySelector('.toggle-slider');
+
+    // Set toggleSwitch UI based on saved theme
+    if (htmlElement.classList.contains('dark')) {
+        darkOption.classList.add('active');
+        lightOption.classList.remove('active');
+        slider.style.transform = 'translateX(0)';
+    } else {
+        lightOption.classList.add('active');
+        darkOption.classList.remove('active');
+        slider.style.transform = 'translateX(100%)';
+    }
+
+    toggleSwitch.addEventListener('click', () => {
+        if (darkOption.classList.contains('active')) {
+            darkOption.classList.remove('active');
+            lightOption.classList.add('active');
+            slider.style.transform = 'translateX(100%)';
+            htmlElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            lightOption.classList.remove('active');
+            darkOption.classList.add('active');
+            slider.style.transform = 'translateX(0)';
+            htmlElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
     });
-
 });
-
-        const toggleSwitch = document.querySelector('.toggle-switch');
-        const lightOption = document.getElementById('light');
-        const darkOption = document.getElementById('dark');
-        const slider = document.querySelector('.toggle-slider');
-
-        toggleSwitch.addEventListener('click', () => {
-            if (lightOption.classList.contains('active')) {
-                lightOption.classList.remove('active');
-                darkOption.classList.add('active');
-                slider.style.transform = 'translateX(100%)';
-            } else {
-                darkOption.classList.remove('active');
-                lightOption.classList.add('active');
-                slider.style.transform = 'translateX(0)';
-            }
-        });

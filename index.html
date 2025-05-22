@@ -203,81 +203,72 @@
         "
       ></div>
     </div>
-    <section class="stars">
+    <div class="stars">
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-    </section>
+    </div>
     <main
       class="2xl:w-[1450px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]"
     >
-      <header>
-        <div
-          class="bento flex flex-row items-center justify-between p-4 rounded-2xl my-4"
-        >
-          <div class="logo flex flex-1 justify-start items-center">
-            <img
-              src="./src/img/logo-gradient.svg"
-              alt="portfolio logo"
-              class="w-12"
-            />
-            <span>پورتفولیو</span>
-          </div>
+            <header>
+          <div
+            class="bento flex flex-row items-center justify-between p-4 rounded-2xl my-4"
+          >
+            <div class="logo flex flex-1 justify-start items-center">
+              <img
+                src="./src/img/logo-gradient.svg"
+                alt="portfolio logo"
+                class="w-12"
+              />
+              <span>پورتفولیو</span>
+            </div>
 
-          <nav class="menu flex flex-2 justify-center">
-            <ul class="flex flex-row gap-8">
-              <li>
-                <a href="#" class="flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-house text-xl"></i>
-                  <span class="menu_item">خانه</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-folder-open text-xl"></i>
-                  <span class="menu_item">پروژه‌ها</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-newspaper text-xl"></i>
-                  <span class="menu_item">وبلاگ</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+            <nav class="menu flex flex-2 justify-center">
+              <ul class="flex flex-row gap-8">
+                <li>
+                  <a href="#" class="flex items-center justify-center gap-2 link">
+                    <i class="fa-solid fa-house text-xl link-icon"></i>
+                    <span class="menu_item link-text">خانه</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center justify-center gap-2 link">
+                    <i class="fa-solid fa-folder-open text-xl link-icon"></i>
+                    <span class="menu_item link-text">پروژه‌ها</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center justify-center gap-2 link">
+                    <i class="fa-solid fa-newspaper text-xl link-icon"></i>
+                    <span class="menu_item link-text">وبلاگ</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
 
-          <div class="buttons flex flex-1 justify-end gap-4 items-center">
-            <button
-              id="darkModeToggle"
-              class="cursor-pointer w-12 h-12 bg-neutral-200/20 hover:bg-neutral-200/40 rounded-full flex items-center gap-2 justify-center"
-            >
-              <i
-                id="darkModeIcon"
-                class="fa-solid fa-sun darkmodebtn text-xl"
-              ></i>
-            </button>
-            <a
-              href="#"
-              class="button px-7 py-4 bg-cyan-500/40 hover:bg-cyan-500/80 rounded-2xl flex items-center gap-2"
-            >
-              <span class="font-semibold text-sm">همکاری در پروژه</span>
-              <i class="fa-solid fa-handshake text-xl"></i>
-            </a>
+            <div class="buttons flex flex-1 justify-end gap-4 items-center">
+              <a
+                href="#"
+                class="button px-7 py-4 bg-cyan-500/40 hover:bg-cyan-500/80 rounded-2xl flex items-center gap-2"
+              >
+                <span class="font-semibold text-sm">همکاری در پروژه</span>
+                <i class="fa-solid fa-handshake text-xl"></i>
+              </a>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
       <div class="bento-container">
         <div class="div1 bento">1</div>
         <div class="div2 bento">2</div>
         <div class="div3 bento">3</div>
-        <div class="div4 bento">
+        <div class="theme-switch bento">
           <div class="toggle-switch">
             <div class="toggle-option active" id="light">
-              <i class="fa-solid fa-sun-bright"></i>
+              <i class="fa-solid fa-sun-bright fa-lg"></i>
             </div>
             <div class="toggle-option" id="dark">
-              <i class="fa-regular fa-moon-stars"></i>
+              <i class="fa-solid fa-moon-stars fa-lg"></i>
             </div>
             <div class="toggle-slider"></div>
           </div>
@@ -292,19 +283,27 @@
         <div class="div12 bento">12</div>
         <div class="div13 bento">13</div>
       </div>
-      <footer
-        class="flex flex-col-reverse items-center justify-center mt-8 mb-4 lg:flex-row gap-4 lg:justify-between"
-      >
-        <span class="copy-right"
-          >طراحی و اجرا توسط تیم توسعه ناجینو - 1404</span
+              <footer
+          class="flex flex-col-reverse items-center justify-center lg:flex-row gap-4 lg:justify-between my-8"
         >
-        <div class="socials flex flex-row gap-4">
-          <a href="#"><i class="fa-brands fa-whatsapp text-xl"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube text-xl"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin text-xl"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram text-xl"></i></a>
-        </div>
-      </footer>
+          <span class="copy-right text-color-theme"
+            >طراحی و اجرا توسط تیم توسعه ناجینو - 1404</span
+          >
+          <div class="socials flex flex-row gap-4">
+            <a href="#"
+              ><i class="fa-brands fa-whatsapp text-xl text-color-theme social"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-youtube text-xl text-color-theme social"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-linkedin text-xl text-color-theme social"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-instagram text-xl text-color-theme social"></i
+            ></a>
+          </div>
+        </footer>
     </main>
   </body>
 </html>
