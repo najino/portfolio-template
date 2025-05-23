@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Global css -->
     <link rel="stylesheet" href="./src/css/global.css" />
     <!-- stars css -->
@@ -14,11 +15,12 @@
 
     <!-- Tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- FontAwesome cdn -->
+
+    <!-- FontAwesome library -->
     <link rel="stylesheet" href="./src/libraries/fontawesome/css/all.min.css" />
     <script src="./src/libraries/fontawesome/js/all.min.js"></script>
 
-    <title>رزومه باکس</title>
+    <title>بنتوفولیو | رزومه آنلاین</title>
   </head>
   <body>
     <div class="night">
@@ -211,59 +213,55 @@
     <main
       class="2xl:w-[1450px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]"
     >
-            <header>
-          <div
-            class="bento flex flex-row items-center justify-between px-3 py-4 rounded-2xl my-4"
-          >
-            <div class="website-logo flex-1">
-              <a href="#" class="logo flex justify-start items-center gap-1">
+      <header>
+        <div
+          class="bento flex flex-row items-center justify-between px-3 py-4 rounded-2xl my-4"
+        >
+          <div class="website-logo flex-1">
+            <a href="/" class="logo flex justify-start items-center gap-2">
               <img
                 src="./src/img/logo-gradient.svg"
                 alt="portfolio logo"
                 class="w-14"
               />
-              <span class="header font-bold text-lg">رزومه‌باکس</span>
-              </a>
-            </div>
-
-            <nav class="menu flex flex-2 justify-center">
-              <ul class="flex flex-row gap-8">
-                <li>
-                  <a href="#" class="flex items-center justify-center gap-2 link">
-                    <i class="fa-solid fa-house text-xl link-icon"></i>
-                    <span class="menu_item link-text">خانه</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center gap-2 link">
-                    <i class="fa-solid fa-folder-open text-xl link-icon"></i>
-                    <span class="menu_item link-text">پروژه‌ها</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center justify-center gap-2 link">
-                    <i class="fa-solid fa-newspaper text-xl link-icon"></i>
-                    <span class="menu_item link-text">وبلاگ</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-            <div class="buttons flex flex-1 justify-end gap-4 items-center">
-              <a
-                href="#"
-                class="button px-7 py-4 bg-cyan-500/40 hover:bg-cyan-500/80 rounded-2xl flex items-center gap-2"
-              >
-                <span class="font-semibold text-sm">همکاری در پروژه</span>
-                <i class="fa-solid fa-handshake text-xl"></i>
-              </a>
-            </div>
+              <span class="header font-semibold text-lg">بنتوفولیو</span>
+            </a>
           </div>
-        </header>
+
+          <nav class="menu flex flex-2 justify-center">
+            <ul class="flex flex-row gap-12">
+              <li>
+                <a href="#" class="flex items-center justify-center gap-2 link">
+                  <i class="fa-solid fa-house text-xl link-icon"></i>
+                  <span class="menu_item link-text">خانه</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center justify-center gap-2 link">
+                  <i class="fa-solid fa-folder-open text-xl link-icon"></i>
+                  <span class="menu_item link-text">پروژه‌ها</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center justify-center gap-2 link">
+                  <i class="fa-solid fa-newspaper text-xl link-icon"></i>
+                  <span class="menu_item link-text">وبلاگ</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="buttons flex flex-1 justify-end gap-4 items-center">
+            <button class="contact-button">
+              ارتباط با من
+              <i class="fa-solid fa-phone"></i>
+            </button>
+          </div>
+        </div>
+      </header>
       <div class="bento-container">
-        <div class="div1 bento bento-boxes">1</div>
-        <div class="div2 bento bento-boxes">2</div>
-        <div class="div3 bento bento-boxes">3</div>
+        <div class="introduction bento bento-boxes">Introduction</div>
+        <div class="education bento bento-boxes">Education</div>
         <div class="theme-switch bento p-3">
           <div class="toggle-switch">
             <div class="toggle-option active" id="light">
@@ -275,41 +273,49 @@
             <div class="toggle-slider"></div>
           </div>
         </div>
-        <div class="div5 bento bento-boxes">5</div>
-        <div class="div6 bento bento-boxes">6</div>
-        <div class="div7 bento bento-boxes">7</div>
-        <div class="div8 bento bento-boxes">8</div>
-        <div class="div9 bento bento-boxes">9</div>
-        <div class="div10 bento bento-boxes">10</div>
-        <div class="div11 bento bento-boxes">11</div>
-        <div class="div12 bento bento-boxes">12</div>
-        <div class="div13 bento bento-boxes">13</div>
+        <div class="languages bento bento-boxes">Languages</div>
+        <div class="email bento bento-boxes">Email</div>
+        <div class="experience bento bento-boxes">Work Experience</div>
+        <div class="skills bento bento-boxes">Skills</div>
+        <div class="linkedin bento bento-boxes">Linked In</div>
+        <div class="github bento bento-boxes">Github</div>
+        <div class="resume bento bento-boxes">Resume</div>
+        <div class="portfolio bento bento-boxes">Portfolio</div>
+        <div class="blogs bento bento-boxes">Latest Blogs</div>
       </div>
-              <footer
-          class="flex flex-col-reverse items-center justify-center lg:flex-row gap-4 lg:justify-between my-8"
-        >
-          <span class="copy-right text-color-theme text-lg"
-            >
-            طراحی و اجرا توسط تیم توسعه
-             <a href="#"><span class="text-emphasize">ناجینو</span></a>
-              - 1404
-            </span
+      <footer
+        class="flex flex-col-reverse items-center justify-center lg:flex-row gap-4 lg:justify-between my-8"
+      >
+        <span class="copy-right text-color-theme text-base">
+          طراحی و اجرا توسط تیم توسعه
+          <a href="https://najino.ir"
+            ><span class="text-emphasize">ناجینو</span></a
           >
-          <div class="socials flex flex-row gap-6">
-            <a href="#"
-              ><i class="fa-brands fa-whatsapp text-xl text-color-theme social fa-lg"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-youtube text-xl text-color-theme social fa-lg"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-linkedin text-xl text-color-theme social fa-lg"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-instagram text-xl text-color-theme social fa-lg"></i
-            ></a>
-          </div>
-        </footer>
+          - 1404
+        </span>
+        <div class="socials flex flex-row gap-6">
+          <a href="#"
+            ><i
+              class="fa-brands fa-whatsapp text-xl text-color-theme social fa-lg"
+            ></i
+          ></a>
+          <a href="#"
+            ><i
+              class="fa-brands fa-youtube text-xl text-color-theme social fa-lg"
+            ></i
+          ></a>
+          <a href="#"
+            ><i
+              class="fa-brands fa-linkedin text-xl text-color-theme social fa-lg"
+            ></i
+          ></a>
+          <a href="#"
+            ><i
+              class="fa-brands fa-instagram text-xl text-color-theme social fa-lg"
+            ></i
+          ></a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

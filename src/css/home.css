@@ -11,32 +11,28 @@
     "a a a a a a c c c e e e"
     "a a a a a a c c c e e e"
     "a a a a a a c c c e e e"
-    "a a a a a a b b b b b b"
-    "f f g g g g g h h h h h"
-    "f f g g g g g h h h h h"
-    "i i g g g g g h h h h h"
-    "i i g g g g g h h h h h"
-    "j j k k k k k h h h h h"
-    "j j k k k k k h h h h h"
-    "l l l l l l l h h h h h"
-    "l l l l l l l m m m m m"
-    "l l l l l l l m m m m m"
-    "l l l l l l l m m m m m"
-    "l l l l l l l m m m m m"
-    "l l l l l l l m m m m m"
-    "l l l l l l l m m m m m"
+    "a a a a a a k k k k k f"
+    "h h h h h i i g g g g g"
+    "h h h h h i i g g g g g"
+    "h h h h h i i g g g g g"
+    "h h h h h i i g g g g g"
+    "h h h h h j j g g g g g"
+    "h h h h h j j g g g g g"
+    "h h h h h l l l l l l l"
+    "m m m m m l l l l l l l"
+    "m m m m m l l l l l l l"
+    "m m m m m l l l l l l l"
+    "m m m m m l l l l l l l"
+    "m m m m m l l l l l l l"
+    "m m m m m l l l l l l l"
 ;
 }
 
-.div1 {
+.introduction {
   grid-area: a;
 }
 
-.div2 {
-  grid-area: b;
-}
-
-.div3 {
+.education {
   grid-area: c;
 }
 
@@ -44,38 +40,59 @@
   grid-area: d;
 }
 
-.div5 {
+.languages {
   grid-area: e;
 }
 
-.div6 {
+.email {
   grid-area: f;
 }
 
-.div7 {
+.experience {
   grid-area: g;
 }
 
-.div8 {
+.skills {
   grid-area: h;
 }
 
-.div9 {
+.linkedin {
   grid-area: i;
 }
 
-.div10 {
+.github {
   grid-area: j;
 }
 
-.div11 {
+.resume {
   grid-area: k;
 }
 
-.div12 {
+.portfolio {
   grid-area: l;
 }
 
-.div13 {
+.blogs {
   grid-area: m;
+}
+
+/* Responsive Design for Grids */
+@media (min-width: 640px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1280px) {
+
+}
+
+@media (min-width: 1536px) {
+
 }
