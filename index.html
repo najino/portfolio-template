@@ -21,6 +21,8 @@
     <script src="./src/libraries/fontawesome/js/all.min.js"></script>
 
     <title>بنتوفولیو | رزومه آنلاین</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/src/img/logo.ico" />
   </head>
   <body>
     <div class="night">
@@ -224,7 +226,7 @@
                 alt="portfolio logo"
                 class="w-14"
               />
-              <span class="header font-semibold text-lg">بنتوفولیو</span>
+              <span class="header font-semibold text-lg logo-text">بنتوفولیو</span>
             </a>
           </div>
 
@@ -260,8 +262,6 @@
         </div>
       </header>
       <div class="bento-container">
-        <div class="introduction bento bento-boxes">Introduction</div>
-        <div class="education bento bento-boxes">Education</div>
         <div class="theme-switch bento p-3">
           <div class="toggle-switch">
             <div class="toggle-option active" id="light">
@@ -273,14 +273,48 @@
             <div class="toggle-slider"></div>
           </div>
         </div>
+        <div class="introduction bento bento-boxes flex flex-col gap-8">
+          <div class="flex flex-row gap-8 items-center">
+            <div class="image-container">
+              <img
+                class="w-28 h-28 rounded-full"
+                src="./src/img/Profile Picture.jpg"
+                alt="Borhan Mortazavi Picture"
+              />
+            </div>
+            <div class="header-container flex flex-col gap-3 text-[var(--focus-color)]">
+              <h1 class="text-4xl font-black">برهان مرتضوی میلانی</h1>
+              <span class="text-[var(--body-color)]">برنامه نویس فول استک و طراح گرافیک</span>
+            </div>
+          </div>
+          <p class="text-[var(--body-color)] text-base">
+            سلام 👋 من عاشق کدنویسی، طراحی و خلق چیزای جدیدم. از طراحی ظاهر سایت
+            گرفته تا پیاده‌سازی پشت‌صحنه‌اش با JavaScript – همه‌اش کار منه! وقتی
+            پشت سیستمم نیستم، حتما دارم به طرح‌های گرافیکی یا تجربه‌های کاربری
+            جدید فکر می‌کنم. 💻
+          </p>
+        </div>
+        <div class="education bento bento-boxes">Education</div>
         <div class="languages bento bento-boxes">Languages</div>
-        <div class="email bento bento-boxes">Email</div>
-        <div class="experience bento bento-boxes">Work Experience</div>
+        <div class="resume bento bento-boxes">
+          <div class="flex flex-row gap-12 items-center justify-between">
+            <div class="text-container flex flex-col gap-1">
+              <span class="text-[var(--body-color)]">دانلود</span>
+              <h2 class="text-2xl font-bold">رزومه</h2>
+            </div>
+            <div class="button-container flex flex-row gap-6">
+              <button><i class="fa-regular fa-eye fa-xl icon-hover"></i></button>
+              <button><i class="fa-regular fa-arrow-down-to-square fa-xl icon-hover"></i></button>
+
+            </div>
+          </div>
+        </div>
         <div class="skills bento bento-boxes">Skills</div>
+        <div class="experience bento bento-boxes">Work Experience</div>
+        <div class="portfolio bento bento-boxes">Portfolio</div>
+        <div class="email bento bento-boxes">Email</div>
         <div class="linkedin bento bento-boxes">Linked In</div>
         <div class="github bento bento-boxes">Github</div>
-        <div class="resume bento bento-boxes">Resume</div>
-        <div class="portfolio bento bento-boxes">Portfolio</div>
         <div class="blogs bento bento-boxes">Latest Blogs</div>
       </div>
       <footer
