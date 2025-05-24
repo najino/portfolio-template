@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="./src/css/stars.css" />
     <!-- homepage only css -->
     <link rel="stylesheet" href="./src/css/home.css" />
-    <!-- Actions JS File -->
-    <script src="./src/js/index.js"></script>
-
     <!-- Tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -23,6 +20,12 @@
     <title>بنتوفولیو | رزومه آنلاین</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/src/img/logo.ico" />
+
+    <!-- swiper js import -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="night">
@@ -215,7 +218,7 @@
     <main
       class="2xl:w-[1450px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]"
     >
-      <header>
+      <header class="header">
         <div
           class="bento flex flex-row items-center justify-between px-3 py-4 rounded-2xl my-4"
         >
@@ -226,7 +229,9 @@
                 alt="portfolio logo"
                 class="w-14"
               />
-              <span class="header font-semibold text-lg logo-text">بنتوفولیو</span>
+              <span class="header font-semibold text-lg logo-text"
+                >بنتوفولیو</span
+              >
             </a>
           </div>
 
@@ -282,9 +287,13 @@
                 alt="Borhan Mortazavi Picture"
               />
             </div>
-            <div class="header-container flex flex-col gap-3 text-[var(--focus-color)]">
+            <div
+              class="header-container flex flex-col gap-3 text-[var(--focus-color)]"
+            >
               <h1 class="text-4xl font-black">برهان مرتضوی میلانی</h1>
-              <span class="text-[var(--body-color)]">برنامه نویس فول استک و طراح گرافیک</span>
+              <span class="text-[var(--body-color)]"
+                >برنامه نویس فول استک و طراح گرافیک</span
+              >
             </div>
           </div>
           <p class="text-[var(--body-color)] text-base">
@@ -297,24 +306,73 @@
         <div class="education bento bento-boxes">Education</div>
         <div class="languages bento bento-boxes">Languages</div>
         <div class="resume bento bento-boxes">
-          <div class="flex flex-row gap-12 items-center justify-between">
+          <div
+            class="flex flex-row gap-12 items-center justify-between w-[100%] h-[100%]"
+          >
             <div class="text-container flex flex-col gap-1">
               <span class="text-[var(--body-color)]">دانلود</span>
               <h2 class="text-2xl font-bold">رزومه</h2>
             </div>
             <div class="button-container flex flex-row gap-6">
-              <button><i class="fa-regular fa-eye fa-xl icon-hover"></i></button>
-              <button><i class="fa-regular fa-arrow-down-to-square fa-xl icon-hover"></i></button>
-
+              <button>
+                <i class="fa-regular fa-eye fa-xl icon-hover"></i>
+              </button>
+              <button>
+                <i
+                  class="fa-regular fa-arrow-down-to-square fa-xl icon-hover"
+                ></i>
+              </button>
             </div>
           </div>
         </div>
         <div class="skills bento bento-boxes">Skills</div>
         <div class="experience bento bento-boxes">Work Experience</div>
-        <div class="portfolio bento bento-boxes">Portfolio</div>
-        <div class="email bento bento-boxes">Email</div>
-        <div class="linkedin bento bento-boxes">Linked In</div>
-        <div class="github bento bento-boxes">Github</div>
+        <div class="portfolio bento bento-boxes flex flex-col justify-center items-center">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./src/img/Portfolio1.jpg" alt="Portfolio Item" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/img/Portfolio2.jpg" alt="Portfolio Item" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/img/Portfolio3.jpg" alt="Portfolio Item" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/img/Portfolio4.jpg" alt="Portfolio Item" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/img/Portfolio5.jpg" alt="Portfolio Item" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="email bento bento-boxes">
+          <button
+            class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+          >
+            <i class="fa-regular fa-envelope fa-xl icon-hover"></i>
+            <h2 class="text-xl font-bold">ایمیل</h2>
+          </button>
+        </div>
+        <div class="linkedin bento bento-boxes">
+          <button
+            class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+          >
+            <i class="fa-brands fa-linkedin fa-xl icon-hover"></i>
+            <h2 class="text-xl font-bold">Linked In</h2>
+          </button>
+        </div>
+        <div class="github bento bento-boxes">
+          <button
+            class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+          >
+            <i class="fa-brands fa-github fa-xl icon-hover"></i>
+            <h2 class="text-xl font-bold">Github</h2>
+          </button>
+        </div>
         <div class="blogs bento bento-boxes">Latest Blogs</div>
       </div>
       <footer
@@ -351,5 +409,9 @@
         </div>
       </footer>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Actions JS File -->
+    <script src="./src/js/index.js"></script>
   </body>
 </html>

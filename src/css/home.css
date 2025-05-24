@@ -46,10 +46,25 @@
 
 .portfolio {
   grid-area: l;
+width: 800px;
+/* ???? fix this ?? plzz help me god */
 }
 
 .blogs {
   grid-area: m;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+
+.swiper-slide img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1em;
 }
 
 /* Responsive Design for Grids */
@@ -91,8 +106,7 @@
       "l l l l l l"
       "l l l l l l"
       "m m m m m m"
-      "m m m m m m"
-;
+      "m m m m m m";
     gap: 0.75em;
   }
 }
@@ -196,5 +210,6 @@
       "m m m m m l l l l l l l"
       "m m m m m l l l l l l l";
     gap: 1em;
+    height: 1000px;
   }
 }

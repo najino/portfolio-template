@@ -59,6 +59,12 @@ html.dark {
   --contact-hover-text-color: rgba(255, 255, 255, 1);
 }
 
+.header{
+  width: 100%;
+}
+
+
+
 h1, h2, h3, h4, h5, h6, .logo-text {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(267deg, var(--gradient-text-color), var(--focus-color) 50%, var(--gradient-text-color));
@@ -92,7 +98,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   /* ??? fix this */
 }
 
