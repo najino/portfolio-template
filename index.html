@@ -327,7 +327,10 @@
         </div>
         <div class="skills bento bento-boxes">Skills</div>
         <div class="experience bento bento-boxes">Work Experience</div>
-        <div class="portfolio bento bento-boxes flex flex-col justify-center items-center">
+        <div
+          class="portfolio bento bento-boxes flex flex-col justify-center gap-6"
+        >
+          <h2 class="text-xl font-bold">نمونه کار</h2>
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -373,7 +376,50 @@
             <h2 class="text-xl font-bold">Github</h2>
           </button>
         </div>
-        <div class="blogs bento bento-boxes">Latest Blogs</div>
+        <div class="blogs bento bento-boxes flex flex-col gap-6">
+          <h2 class="text-xl font-bold">آخرین مطالب</h2>
+          <div class="blogs-container flex flex-col gap-4">
+            <div class="blog-post flex flex-row justify-between items-center">
+              <h3 class="blog-title text-sm">مزیت های فریمورک Next Js نسبت به React</h3>
+              <div class="post-details flex flex-col justify-center items-start gap-2">
+                <div class="date flex flex-row gap-1 items-center">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span class="text-xs">25 اردیبهشت 1404</span>
+                </div>
+                <div class="author flex flex-row gap-1 items-center">
+                  <i class="fa-regular fa-user  fa-xs"></i>
+                  <span class="text-xs">برهان مرتضوی</span>
+                </div>
+              </div>
+            </div>
+                        <div class="blog-post flex flex-row justify-between items-center">
+              <h3 class="blog-title text-sm">آموزش استفاده از B-Crypt در Express JS</h3>
+              <div class="post-details flex flex-col justify-center items-start gap-2">
+                <div class="date flex flex-row gap-1 items-center">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span class="text-xs">29 فروردین 1404</span>
+                </div>
+                <div class="author flex flex-row gap-1 items-center">
+                  <i class="fa-regular fa-user  fa-xs"></i>
+                  <span class="text-xs">برهان مرتضوی</span>
+                </div>
+              </div>
+            </div>
+                        <div class="blog-post flex flex-row justify-between items-center">
+              <h3 class="blog-title text-sm">معرفی کتابخانه Passport برای ثبت نام کاربران</h3>
+              <div class="post-details flex flex-col justify-center items-start gap-2">
+                <div class="date flex flex-row gap-1 items-center">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span class="text-xs">12 اسفند 1403</span>
+                </div>
+                <div class="author flex flex-row gap-1 items-center">
+                  <i class="fa-regular fa-user  fa-xs"></i>
+                  <span class="text-xs">برهان مرتضوی</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <footer
         class="flex flex-col-reverse items-center justify-center lg:flex-row gap-4 lg:justify-between my-8"
