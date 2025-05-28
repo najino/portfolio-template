@@ -59,28 +59,37 @@ html.dark {
   --contact-hover-text-color: rgba(255, 255, 255, 1);
 }
 
-.header{
+.header {
   width: 100%;
 }
 
-
-
-h1, h2, h3, h4, h5, h6, .logo-text {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo-text {
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(267deg, var(--gradient-text-color), var(--focus-color) 50%, var(--gradient-text-color));
+  background-image: linear-gradient(
+    267deg,
+    var(--gradient-text-color),
+    var(--focus-color) 50%,
+    var(--gradient-text-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
 }
-button{
+button {
   cursor: pointer;
 }
-.icon-hover{
+.icon-hover {
   transition: 0.2s;
   color: var(--text-color);
 }
-.icon-hover:hover{
+.icon-hover:hover {
   transition: 0.2s;
-  color: var(--linkhover-color) ;
+  color: var(--linkhover-color);
 }
 
 .text-color-theme {
@@ -107,9 +116,9 @@ body {
 }
 
 ul {
-  list-style-type: none; 
-  padding: 0; 
-  margin: 0; 
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .link-icon {
@@ -129,7 +138,7 @@ ul {
   color: var(--linkhover-color);
 }
 a {
-  cursor: pointer; 
+  cursor: pointer;
   text-decoration: none; /* remove underline */
   color: inherit;
 }
@@ -264,10 +273,19 @@ a:hover {
   color: var(--active-color);
 }
 
+.one-line-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block; /* or inline-block */
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 /* Font Face Import */
 @font-face {
-	font-family: IRANYekanXVF;
+  font-family: IRANYekanXVF;
 
-	src: url('../font/woff/IRANYekanXVF.woff') format('woff'),   
-	url('../font/woff2/IRANYekanXVF.woff2') format('woff2');		 
+  src: url("../font/woff/IRANYekanXVF.woff") format("woff"),
+    url("../font/woff2/IRANYekanXVF.woff2") format("woff2");
 }
