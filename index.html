@@ -215,122 +215,175 @@
       <div id="stars2"></div>
       <div id="stars3"></div>
     </div>
-    <main
-      class="2xl:w-[1450px] xl:w-[1200px] lg:w-[950px] md:w-[750px] sm:w-[600px] w-[calc(100vw-20px)]"
-    >
-      <header class="header">
-        <div
-          class="bento flex flex-row items-center justify-between px-3 py-4 rounded-2xl my-4"
-        >
-          <div class="website-logo flex-1">
-            <a href="/" class="logo flex justify-start items-center gap-2">
-              <img
-                src="./src/img/logo-gradient.svg"
-                alt="portfolio logo"
-                class="w-14"
-              />
-              <span class="header font-semibold text-lg logo-text"
-                >بنتوفولیو</span
-              >
-            </a>
+    <header class="header">
+      <div
+        class="bento flex flex-row items-center justify-between px-3 py-4 rounded-2xl my-4"
+      >
+        <div class="website-logo flex-1">
+          <a href="/" class="logo flex justify-start items-center gap-2">
+            <img
+              src="./src/img/logo-gradient.svg"
+              alt="portfolio logo"
+              class="w-14"
+            />
+            <span class="header font-semibold text-lg logo-text"
+              >بنتوفولیو</span
+            >
+          </a>
+        </div>
+
+        <nav class="menu flex flex-2 justify-center">
+          <ul class="flex flex-row gap-12">
+            <li>
+              <a href="#" class="flex items-center justify-center gap-2 link">
+                <i class="fa-solid fa-house text-xl link-icon"></i>
+                <span class="menu_item link-text">خانه</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center gap-2 link">
+                <i class="fa-solid fa-folder-open text-xl link-icon"></i>
+                <span class="menu_item link-text">پروژه‌ها</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center gap-2 link">
+                <i class="fa-solid fa-newspaper text-xl link-icon"></i>
+                <span class="menu_item link-text">وبلاگ</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="buttons flex flex-1 justify-end gap-4 items-center">
+          <button class="contact-button">
+            ارتباط با من
+            <i class="fa-solid fa-phone"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="bento-container">
+      <div class="theme-switch bento p-3">
+        <div class="toggle-switch">
+          <div class="toggle-option active" id="light">
+            <i class="fa-solid fa-sun-bright fa-lg"></i>
           </div>
-
-          <nav class="menu flex flex-2 justify-center">
-            <ul class="flex flex-row gap-12">
-              <li>
-                <a href="#" class="flex items-center justify-center gap-2 link">
-                  <i class="fa-solid fa-house text-xl link-icon"></i>
-                  <span class="menu_item link-text">خانه</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center justify-center gap-2 link">
-                  <i class="fa-solid fa-folder-open text-xl link-icon"></i>
-                  <span class="menu_item link-text">پروژه‌ها</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center justify-center gap-2 link">
-                  <i class="fa-solid fa-newspaper text-xl link-icon"></i>
-                  <span class="menu_item link-text">وبلاگ</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="buttons flex flex-1 justify-end gap-4 items-center">
-            <button class="contact-button">
-              ارتباط با من
-              <i class="fa-solid fa-phone"></i>
+          <div class="toggle-option" id="dark">
+            <i class="fa-solid fa-moon-stars fa-lg"></i>
+          </div>
+          <div class="toggle-slider"></div>
+        </div>
+      </div>
+      <div class="introduction bento bento-boxes flex flex-col gap-8">
+        <div class="flex flex-row gap-8 items-center">
+          <div class="image-container">
+            <img
+              class="w-28 h-28 rounded-full"
+              src="./src/img/Profile Picture.jpg"
+              alt="Borhan Mortazavi Picture"
+            />
+          </div>
+          <div
+            class="header-container flex flex-col gap-3 text-[var(--focus-color)]"
+          >
+            <h1 class="text-4xl font-black">برهان مرتضوی میلانی</h1>
+            <span class="text-[var(--body-color)]"
+              >برنامه نویس فول استک و طراح گرافیک</span
+            >
+          </div>
+        </div>
+        <p class="text-[var(--body-color)] text-base">
+          سلام 👋 من عاشق کدنویسی، طراحی و خلق چیزای جدیدم. از طراحی ظاهر سایت
+          گرفته تا پیاده‌سازی پشت‌صحنه‌اش با JavaScript – همه‌اش کار منه! وقتی
+          پشت سیستمم نیستم، حتما دارم به طرح‌های گرافیکی یا تجربه‌های کاربری
+          جدید فکر می‌کنم. 💻
+        </p>
+      </div>
+      <div class="education bento bento-boxes">
+        <h2 class="text-2xl font-bold">تحصیلات</h2>
+      </div>
+      <div class="languages bento bento-boxes">
+        <h2 class="text-2xl font-bold">زبان‌ها</h2>
+      </div>
+      <div class="resume bento bento-boxes">
+        <div
+          class="flex flex-row gap-12 items-center justify-between w-[100%] h-[100%]"
+        >
+          <div class="text-container flex flex-col gap-1">
+            <span class="text-[var(--body-color)]">دانلود</span>
+            <h2 class="text-2xl font-bold">رزومه</h2>
+          </div>
+          <div class="button-container flex flex-row gap-6">
+            <button>
+              <i class="fa-regular fa-eye fa-xl icon-hover"></i>
+            </button>
+            <button>
+              <i
+                class="fa-regular fa-arrow-down-to-square fa-xl icon-hover"
+              ></i>
             </button>
           </div>
         </div>
-      </header>
-      <div class="bento-container">
-        <div class="theme-switch bento p-3">
-          <div class="toggle-switch">
-            <div class="toggle-option active" id="light">
-              <i class="fa-solid fa-sun-bright fa-lg"></i>
-            </div>
-            <div class="toggle-option" id="dark">
-              <i class="fa-solid fa-moon-stars fa-lg"></i>
-            </div>
-            <div class="toggle-slider"></div>
+      </div>
+      <div class="skills bento bento-boxes flex flex-col gap-6">
+        <h2 class="text-xl font-bold">مهارت‌های نرم‌افزاری</h2>
+        <div class="skills-grid">
+          <div class="single-skill"  title="HTML">
+            <img src="./src/img/html-logo.png" alt="html logo" />
+          </div>
+          <div class="single-skill"  title="CSS">
+            <img src="./src/img/css-logo.png" alt="css logo" />
+          </div>
+          <div class="single-skill"  title="JavaScript">
+            <img src="./src/img/js-logo.png" alt="js logo" />
+          </div>
+          <div class="single-skill"  title="Bootstrap">
+            <img src="./src/img/bootstrap-logo.png" alt="bootstrap logo" />
+          </div>
+          <div class="single-skill"  title="Tailwind">
+            <img src="./src/img/tailwind-logo.png" alt="tailwind-logo" />
+          </div>
+          <div class="single-skill"  title="React Js">
+            <img src="./src/img/react-logo.png" alt="react logo" />
+          </div>
+          <div class="single-skill"  title="Next Js">
+            <img src="./src/img/next-logo.png" alt="next logo" />
+          </div>
+          <div class="single-skill"  title="Git">
+            <img src="./src/img/git-logo.png" alt="git logo" />
+          </div>
+          <div class="single-skill"  title="Chatgpt AI">
+            <img src="./src/img/chatgpt-logo.png" alt="chatgpt logo" />
+          </div>
+          <div class="single-skill"  title="Adobe Photoshop">
+            <img src="./src/img/photoshop-logo.png" alt="photoshop logo" />
+          </div>
+          <div class="single-skill"  title="Adobe Xd">
+            <img src="./src/img/adobexd-logo.png" alt="adobexd logo" />
+          </div>
+          <div class="single-skill"  title="Adobe Illustrator">
+            <img src="./src/img/adobeai-logo.png" alt="adobeAi logo" />
+          </div>
+          <div class="single-skill"  title="Figma">
+            <img src="./src/img/figma-logo.png" alt="Figma logo" />
+          </div>
+          <div class="single-skill"  title="Blender">
+            <img src="./src/img/blender-logo.png" alt="blender logo" />
           </div>
         </div>
-        <div class="introduction bento bento-boxes flex flex-col gap-8">
-          <div class="flex flex-row gap-8 items-center">
-            <div class="image-container">
-              <img
-                class="w-28 h-28 rounded-full"
-                src="./src/img/Profile Picture.jpg"
-                alt="Borhan Mortazavi Picture"
-              />
-            </div>
-            <div
-              class="header-container flex flex-col gap-3 text-[var(--focus-color)]"
-            >
-              <h1 class="text-4xl font-black">برهان مرتضوی میلانی</h1>
-              <span class="text-[var(--body-color)]"
-                >برنامه نویس فول استک و طراح گرافیک</span
-              >
-            </div>
-          </div>
-          <p class="text-[var(--body-color)] text-base">
-            سلام 👋 من عاشق کدنویسی، طراحی و خلق چیزای جدیدم. از طراحی ظاهر سایت
-            گرفته تا پیاده‌سازی پشت‌صحنه‌اش با JavaScript – همه‌اش کار منه! وقتی
-            پشت سیستمم نیستم، حتما دارم به طرح‌های گرافیکی یا تجربه‌های کاربری
-            جدید فکر می‌کنم. 💻
-          </p>
-        </div>
-        <div class="education bento bento-boxes">Education</div>
-        <div class="languages bento bento-boxes">Languages</div>
-        <div class="resume bento bento-boxes">
-          <div
-            class="flex flex-row gap-12 items-center justify-between w-[100%] h-[100%]"
-          >
-            <div class="text-container flex flex-col gap-1">
-              <span class="text-[var(--body-color)]">دانلود</span>
-              <h2 class="text-2xl font-bold">رزومه</h2>
-            </div>
-            <div class="button-container flex flex-row gap-6">
-              <button>
-                <i class="fa-regular fa-eye fa-xl icon-hover"></i>
-              </button>
-              <button>
-                <i
-                  class="fa-regular fa-arrow-down-to-square fa-xl icon-hover"
-                ></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="skills bento bento-boxes">Skills</div>
-        <div class="experience bento bento-boxes">Work Experience</div>
-        <div
-          class="portfolio bento bento-boxes flex flex-col justify-center gap-6"
-        >
-          <h2 class="text-xl font-bold">نمونه کار</h2>
+        <h2 class="text-xl font-bold">مهارت‌های فردی</h2>
+        <div class="skills-list"></div>
+      </div>
+      <div class="experience bento bento-boxes">
+        Work Experience
+
+      </div>
+      <div
+        class="portfolio bento bento-boxes flex flex-col justify-center gap-6"
+      >
+        <h2 class="text-xl font-bold">نمونه کار</h2>
+        <div class="swiper-container">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <a class="swiper-slide" href="#">
@@ -352,121 +405,130 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
-        <div class="email bento bento-boxes">
-          <button
-            class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+      </div>
+      <div class="email bento bento-boxes">
+        <button
+          class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+        >
+          <i class="fa-regular fa-envelope fa-xl icon-hover"></i>
+          <h2 class="text-xl font-bold">ایمیل</h2>
+        </button>
+      </div>
+      <div class="linkedin bento bento-boxes">
+        <button
+          class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+        >
+          <i class="fa-brands fa-linkedin fa-xl icon-hover"></i>
+          <h2 class="text-xl font-bold">Linked In</h2>
+        </button>
+      </div>
+      <div class="github bento bento-boxes">
+        <button
+          class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+        >
+          <i class="fa-brands fa-github fa-xl icon-hover"></i>
+          <h2 class="text-xl font-bold">Github</h2>
+        </button>
+      </div>
+      <div class="blogs bento bento-boxes flex flex-col gap-6">
+        <h2 class="text-xl font-bold">آخرین مطالب</h2>
+        <div class="blogs-container flex flex-col">
+          <a
+            class="blog-post flex flex-row justify-between items-center"
+            href="#"
           >
-            <i class="fa-regular fa-envelope fa-xl icon-hover"></i>
-            <h2 class="text-xl font-bold">ایمیل</h2>
-          </button>
-        </div>
-        <div class="linkedin bento bento-boxes">
-          <button
-            class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
+              مزیت های فریمورک Next Js نسبت به React
+            </h3>
+            <div
+              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
+            >
+              <div class="date flex flex-row gap-1 items-center">
+                <i class="fa-regular fa-calendar fa-xs"></i>
+                <span class="text-xs one-line-text">25 اردیبهشت 1404</span>
+              </div>
+              <div class="author flex flex-row gap-1 items-center">
+                <i class="fa-regular fa-user fa-xs"></i>
+                <span class="text-xs one-line-text">برهان مرتضوی</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="blog-post flex flex-row justify-between items-center"
+            href="#"
           >
-            <i class="fa-brands fa-linkedin fa-xl icon-hover"></i>
-            <h2 class="text-xl font-bold">Linked In</h2>
-          </button>
-        </div>
-        <div class="github bento bento-boxes">
-          <button
-            class="flex flex-col items-center justify-center gap-2 w-[100%] h-[100%]"
+            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
+              آموزش استفاده از B-Crypt در Express JS
+            </h3>
+            <div
+              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
+            >
+              <div class="date flex flex-row gap-1 items-center">
+                <i class="fa-regular fa-calendar fa-xs"></i>
+                <span class="text-xs one-line-text">29 فروردین 1404</span>
+              </div>
+              <div class="author flex flex-row gap-1 items-center">
+                <i class="fa-regular fa-user fa-xs"></i>
+                <span class="text-xs one-line-text">برهان مرتضوی</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="blog-post flex flex-row justify-between items-center"
+            href="#"
           >
-            <i class="fa-brands fa-github fa-xl icon-hover"></i>
-            <h2 class="text-xl font-bold">Github</h2>
-          </button>
-        </div>
-        <div class="blogs bento bento-boxes flex flex-col gap-6">
-          <h2 class="text-xl font-bold">آخرین مطالب</h2>
-          <div class="blogs-container flex flex-col">
-            <a class="blog-post flex flex-row justify-between items-center"  href="#">
-              <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
-                مزیت های فریمورک Next Js نسبت به React
-              </h3>
-              <div
-                class="post-details flex flex-col justify-center items-start gap-2  flex-1"
-              >
-                <div class="date flex flex-row gap-1 items-center">
-                  <i class="fa-regular fa-calendar fa-xs"></i>
-                  <span class="text-xs one-line-text">25 اردیبهشت 1404</span>
-                </div>
-                <div class="author flex flex-row gap-1 items-center">
-                  <i class="fa-regular fa-user fa-xs"></i>
-                  <span class="text-xs one-line-text">برهان مرتضوی</span>
-                </div>
+            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
+              معرفی کتابخانه Passport برای ثبت نام کاربران
+            </h3>
+            <div
+              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
+            >
+              <div class="date flex flex-row gap-1 items-center">
+                <i class="fa-regular fa-calendar fa-xs"></i>
+                <span class="text-xs one-line-text">12 اسفند 1403</span>
               </div>
-            </a>
-            <a class="blog-post flex flex-row justify-between items-center"  href="#">
-              <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
-                آموزش استفاده از B-Crypt در Express JS
-              </h3>
-              <div
-                class="post-details flex flex-col justify-center items-start gap-2 flex-1"
-              >
-                <div class="date flex flex-row gap-1 items-center">
-                  <i class="fa-regular fa-calendar fa-xs"></i>
-                  <span class="text-xs one-line-text">29 فروردین 1404</span>
-                </div>
-                <div class="author flex flex-row gap-1 items-center">
-                  <i class="fa-regular fa-user fa-xs"></i>
-                  <span class="text-xs one-line-text">برهان مرتضوی</span>
-                </div>
+              <div class="author flex flex-row gap-1 items-center">
+                <i class="fa-regular fa-user fa-xs"></i>
+                <span class="text-xs one-line-text">برهان مرتضوی</span>
               </div>
-            </a>
-            <a class="blog-post flex flex-row justify-between items-center" href="#">
-              <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
-                معرفی کتابخانه Passport برای ثبت نام کاربران
-              </h3>
-              <div
-                class="post-details flex flex-col justify-center items-start gap-2 flex-1"
-              >
-                <div class="date flex flex-row gap-1 items-center">
-                  <i class="fa-regular fa-calendar fa-xs"></i>
-                  <span class="text-xs one-line-text">12 اسفند 1403</span>
-                </div>
-                <div class="author flex flex-row gap-1 items-center">
-                  <i class="fa-regular fa-user fa-xs"></i>
-                  <span class="text-xs one-line-text">برهان مرتضوی</span>
-                </div>
-              </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
-      <footer
-        class="flex flex-col-reverse items-center justify-center lg:flex-row gap-4 lg:justify-between my-8"
-      >
-        <span class="copy-right text-color-theme text-base">
-          طراحی و اجرا توسط تیم توسعه
-          <a href="https://najino.ir"
-            ><span class="text-emphasize">ناجینو</span></a
-          >
-          - 1404
-        </span>
-        <div class="socials flex flex-row gap-6">
-          <a href="#"
-            ><i
-              class="fa-brands fa-whatsapp text-xl text-color-theme social fa-lg"
-            ></i
-          ></a>
-          <a href="#"
-            ><i
-              class="fa-brands fa-youtube text-xl text-color-theme social fa-lg"
-            ></i
-          ></a>
-          <a href="#"
-            ><i
-              class="fa-brands fa-linkedin text-xl text-color-theme social fa-lg"
-            ></i
-          ></a>
-          <a href="#"
-            ><i
-              class="fa-brands fa-instagram text-xl text-color-theme social fa-lg"
-            ></i
-          ></a>
-        </div>
-      </footer>
-    </main>
+    </div>
+    <footer
+      class="flex flex-col-reverse items-center justify-center lg:flex-row gap-4 lg:justify-between my-8"
+    >
+      <span class="copy-right text-color-theme text-base">
+        طراحی و اجرا توسط تیم توسعه
+        <a href="https://najino.ir"
+          ><span class="text-emphasize">ناجینو</span></a
+        >
+        - 1404
+      </span>
+      <div class="socials flex flex-row gap-6">
+        <a href="#"
+          ><i
+            class="fa-brands fa-whatsapp text-xl text-color-theme social fa-lg"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-youtube text-xl text-color-theme social fa-lg"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-linkedin text-xl text-color-theme social fa-lg"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-instagram text-xl text-color-theme social fa-lg"
+          ></i
+        ></a>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Actions JS File -->

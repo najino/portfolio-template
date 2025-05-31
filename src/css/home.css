@@ -1,7 +1,7 @@
 .bento-container {
   display: grid;
-  gap: 1em;
-  width: 100%;
+  grid-gap: 1em;
+
 }
 
 .introduction {
@@ -26,18 +26,22 @@
 
 .experience {
   grid-area: g;
+
 }
 
 .skills {
   grid-area: h;
+
 }
 
 .linkedin {
   grid-area: i;
+
 }
 
 .github {
   grid-area: j;
+
 }
 
 .resume {
@@ -46,43 +50,79 @@
 
 .portfolio {
   grid-area: l;
-width: 800px;
-/* ???? fix this ?? plzz help me god */
+
 }
 
 .blogs {
   grid-area: m;
+
 }
 
-
-.swiper {
+.swiper-container{
   width: 100%;
   height: 100%;
 }
 
-
-.swiper-slide img{
+.swiper-slide img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 1em;
 }
 
-.blogs-container{
-  height: 100%;
-  justify-content: space-between;
+.swiper-slide {
+  flex-shrink: 0;
+
+}
+.swiper {
   width: 100%;
+  height: 300px;
+}
+.bento-container {
+  display: grid;
 }
 
-.blog-links{
-  transition: 0.2s;}
+.blogs-container {
+  height: 100%;
+  justify-content: space-between;
+}
 
-.blog-links:hover{
+.blog-links {
   transition: 0.2s;
-  background-image: linear-gradient(
-    267deg,
-    var(--linkhover-color)
-  );;
+}
+
+.blog-links:hover {
+  transition: 0.2s;
+  background-image: linear-gradient(267deg, var(--linkhover-color));
+}
+
+.skills-grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, minmax(0, 1fr) ) ;
+    grid-template-rows: repeat(3, 80px ) ;
+}
+
+
+.single-skill{
+  background-color: var(--square-color);
+  border-radius: 1em;
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.single-skill img{
+  width: 50px;
+  height: 50px;
+object-fit: contain;
+
+}
+.bento{
+    min-height: 0;  /* NEW */
+  min-width: 0;   /* NEW; needed for Firefox */
+  overflow: hidden;
 }
 
 /* Responsive Design for Grids */
@@ -107,7 +147,7 @@ width: 800px;
       "l l l l l"
       "l l l l l"
       "m m m m m";
-    gap: 0.5em;
+
   }
 }
 
@@ -125,7 +165,7 @@ width: 800px;
       "l l l l l l"
       "m m m m m m"
       "m m m m m m";
-    gap: 0.75em;
+
   }
 }
 
@@ -148,7 +188,7 @@ width: 800px;
       "l l l l l l m m"
       "l l l l l l m m"
       "l l l l l l m m";
-    gap: 1em;
+
   }
 }
 
@@ -173,7 +213,7 @@ width: 800px;
       "m m m m m l l l l l l"
       "m m m m m l l l l l l"
       "m m m m m l l l l l l";
-    gap: 1em;
+
   }
 }
 
@@ -200,14 +240,14 @@ width: 800px;
       "m m m m m l l l l l l l"
       "m m m m m l l l l l l l"
       "m m m m m l l l l l l l";
-    gap: 1em;
+
   }
 }
 
 @media (min-width: 1536px) {
   .bento-container {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(18, minmax(0, 1fr));
     grid-template:
       "a a a a a a c c c d d d"
       "a a a a a a c c c e e e"
@@ -227,7 +267,7 @@ width: 800px;
       "m m m m m l l l l l l l"
       "m m m m m l l l l l l l"
       "m m m m m l l l l l l l";
-    gap: 1em;
-    height: 1000px;
+    height: 1620px;
+    width: var(--responsive-size);
   }
 }

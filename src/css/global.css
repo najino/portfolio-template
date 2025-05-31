@@ -4,6 +4,7 @@
 }
 
 :root {
+  --responsive-size: 1450px;
   --bg-color: #eeeeee;
   --focus-color: #000;
   --body-color: #494949;
@@ -12,10 +13,11 @@
   --gradient-text-color: rgba(0, 0, 0, 0.801);
   --linkhover-color: #000000;
   --link-color: #1a73e8;
-  --bento-color: #ffffff25;
+  --bento-color: #d8d1d125;
   --star-color: #313168;
   --active-color: #16293f;
   --disabled-color: #afafaf;
+  --square-color:#bbbcbd9d;
 
   /* Contact button light mode colors */
   --contact-bg-gradient-start: rgb(176, 192, 207);
@@ -44,6 +46,7 @@ html.dark {
   --star-color: #fff;
   --active-color: #fff;
   --disabled-color: #888;
+  --square-color:#24313b9d;
 
   /* Contact button dark mode colors */
   --contact-bg-gradient-start: rgba(71, 81, 92, 1);
@@ -59,8 +62,19 @@ html.dark {
   --contact-hover-text-color: rgba(255, 255, 255, 1);
 }
 
-.header {
-  width: 100%;
+header {
+  width: var(--responsive-size);
+  max-width: var(--responsive-size);
+}
+
+footer {
+  width: var(--responsive-size);
+  max-width: var(--responsive-size);
+}
+
+.bento-container {
+  width: var(--responsive-size);
+  max-width: var(--responsive-size);
 }
 
 h1,
@@ -288,4 +302,41 @@ a:hover {
 
   src: url("../font/woff/IRANYekanXVF.woff") format("woff"),
     url("../font/woff2/IRANYekanXVF.woff2") format("woff2");
+}
+
+/* Responsive Design for Grids */
+@media (max-width: 639px) {
+    :root {
+    --responsive-size: calc(100vw-20px);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    :root {
+    --responsive-size: 600px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+    --responsive-size: 750px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    :root {
+    --responsive-size: 950px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+    :root {
+    --responsive-size: 1200px;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --responsive-size: 1450px;
+  }
 }
