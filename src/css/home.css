@@ -13,6 +13,7 @@
 
 .theme-switch {
   grid-area: d;
+  height: 80px;
 }
 
 .languages {
