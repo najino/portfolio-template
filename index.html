@@ -217,7 +217,7 @@
     </div>
     <header class="header">
       <div
-        class="bento flex flex-row items-center justify-between px-3 py-4 rounded-2xl my-4"
+        class="bento flex flex-row items-center justify-between header-padding rounded-2xl my-4"
       >
         <div class="website-logo flex-1">
           <a href="/" class="logo flex justify-start items-center gap-2">
@@ -232,7 +232,7 @@
           </a>
         </div>
 
-        <nav class="menu flex flex-2 justify-center">
+        <nav class="menu flex-2 justify-center hidden lg:flex">
           <ul class="flex flex-row gap-12">
             <li>
               <a href="#" class="flex items-center justify-center gap-2 link">
@@ -255,10 +255,13 @@
           </ul>
         </nav>
 
-        <div class="buttons flex flex-1 justify-end gap-4 items-center">
-          <button class="contact-button">
+        <div class="buttons flex flex-1 justify-end gap-4 items-center ">
+          <button class="contact-button hidden lg:flex">
             ارتباط با من
             <i class="fa-solid fa-phone"></i>
+          </button>
+          <button class="mobile-menu-button flex lg:hidden">
+            <i class="fa-solid fa-bars fa-xl icon-hover"></i>
           </button>
         </div>
       </div>
@@ -302,7 +305,7 @@
       </div>
       <div class="education bento bento-boxes flex flex-col gap-6">
         <h2 class="text-2xl font-bold">تحصیلات</h2>
-        <div class="education-container flex flex-col gap-6 justify-between">
+        <div class="education-container flex flex-col gap-10 justify-start h-[100%]">
           <div class="edu flex flex-row items-center justify-between gap-4">
             <div class="edu-info flex flex-col">
               <span class="text-xs">کارشناسی</span>

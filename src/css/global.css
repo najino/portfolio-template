@@ -67,6 +67,10 @@ header {
   max-width: var(--responsive-size);
 }
 
+.header-padding{
+  padding: 1.4rem;
+}
+
 footer {
   width: var(--responsive-size);
   max-width: var(--responsive-size);
@@ -170,7 +174,6 @@ a:hover {
   cursor: pointer;
   padding: 1.2em 2.5em;
   border-radius: 1em;
-  display: flex;
   flex-direction: row;
   gap: 5px;
   justify-content: center;
@@ -307,7 +310,7 @@ a:hover {
 /* Responsive Design for Grids */
 @media (max-width: 639px) {
     :root {
-    --responsive-size: calc(100vw-20px);
+    --responsive-size: calc(100vw - 20px);
   }
 }
 
