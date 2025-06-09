@@ -255,7 +255,7 @@
           </ul>
         </nav>
 
-        <div class="buttons flex flex-1 justify-end gap-4 items-center ">
+        <div class="buttons flex flex-1 justify-end gap-4 items-center">
           <button class="contact-button hidden lg:flex">
             ارتباط با من
             <i class="fa-solid fa-phone"></i>
@@ -266,6 +266,43 @@
         </div>
       </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" aria-hidden="true">
+      <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+      <!-- Add mobile menu content here if needed -->
+      <div
+        class="flex flex-col h-[100%] w-[100%] justify-center items-center gap-10"
+      >
+        <nav class="menu flex flex-col justify-center">
+          <ul class="flex flex-col gap-12">
+            <li>
+              <a href="#" class="flex items-center justify-center gap-4 link">
+                <i class="fa-solid fa-house text-xl link-icon fa-xl"></i>
+                <span class="menu_item link-text text-xl">خانه</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center gap-4 link">
+                <i class="fa-solid fa-folder-open text-xl link-icon fa-xl"></i>
+                <span class="menu_item link-text text-xl">پروژه‌ها</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-center gap-4 link">
+                <i class="fa-solid fa-newspaper text-xl link-icon fa-xl"></i>
+                <span class="menu_item link-text text-xl">وبلاگ</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="contact-button">
+          ارتباط با من
+          <i class="fa-solid fa-phone"></i>
+        </button>
+      </div>
+    </div>
     <div class="bento-container">
       <div class="theme-switch bento p-3">
         <div class="toggle-switch">
@@ -305,7 +342,9 @@
       </div>
       <div class="education bento bento-boxes flex flex-col gap-6">
         <h2 class="text-2xl font-bold">تحصیلات</h2>
-        <div class="education-container flex flex-col gap-10 justify-start h-[100%]">
+        <div
+          class="education-container flex flex-col gap-10 justify-start h-[100%]"
+        >
           <div class="edu flex flex-row items-center justify-between gap-4">
             <div class="edu-info flex flex-col">
               <span class="text-xs">کارشناسی</span>
@@ -463,9 +502,7 @@
         </div>
         <div class="experience-container flex flex-col gap-10 justify-between">
           <div class="exp flex flex-row items-center justify-between gap-4">
-            <h3 class="mb-2 text-xl">
-              برنامه نویس فول استک JavaScript
-            </h3>
+            <h3 class="mb-2 text-xl">برنامه نویس فول استک JavaScript</h3>
             <div class="exp-info flex flex-col gap-1 items-end">
               <span class="text-sm">استارتاپ ناجینو</span>
               <span class="text-xs text-gray-600">1403 - امروز</span>
@@ -479,9 +516,7 @@
             </div>
           </div>
           <div class="exp flex flex-row items-center justify-between gap-4">
-            <h3 class="mb-2 text-xl">
-              ادمین محتوا سایت وردپرسی
-            </h3>
+            <h3 class="mb-2 text-xl">ادمین محتوا سایت وردپرسی</h3>
             <div class="exp-info flex flex-col gap-1 items-end">
               <span class="text-sm">وبسایت Xternull</span>
               <span class="text-xs text-gray-600">1400 - 1401</span>

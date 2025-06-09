@@ -57,3 +57,24 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+
+// Mobile menu overlay toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuButton = document.querySelector(".mobile-menu-button");
+  const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
+  const mobileMenuClose = document.querySelector(".mobile-menu-close");
+
+  if (mobileMenuButton && mobileMenuOverlay && mobileMenuClose) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenuOverlay.classList.remove("hide");
+      mobileMenuOverlay.classList.add("show");
+      mobileMenuOverlay.setAttribute("aria-hidden", "false");
+    });
+
+    mobileMenuClose.addEventListener("click", () => {
+      mobileMenuOverlay.classList.remove("show");
+      mobileMenuOverlay.classList.add("hide");
+      mobileMenuOverlay.setAttribute("aria-hidden", "true");
+    });
+  }
+});
