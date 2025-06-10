@@ -11,11 +11,6 @@
   grid-area: c;
 }
 
-.theme-switch {
-  grid-area: d;
-  height: 80px;
-}
-
 .languages {
   grid-area: e;
 }
@@ -51,7 +46,10 @@
 .blogs {
   grid-area: m;
 }
-
+.profile-pic{
+  width: 100px;
+  height: 100px;
+}
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -84,7 +82,6 @@
 
 .blogs-container {
   height: 100%;
-  justify-content: space-between;
 }
 
 .blog-links {
@@ -99,8 +96,9 @@
 .skills-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-template-rows: repeat(3, 80px);
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  /* Remove fixed row height to allow aspect ratio to work */
+  grid-auto-rows: auto;
 }
 
 .single-skill {
@@ -111,11 +109,26 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  aspect-ratio: 1 / 1; /* Make each item square */
+  box-sizing: border-box; /* Include padding in size */
 }
+
+.single-skill:hover{
+background-color: var(--square-hover-color);
+transition: 0.3s;
+}
+
 .single-skill img {
   width: 50px;
   height: 50px;
   object-fit: contain;
+}
+.paragraph{
+  line-height: 2.4em;
+    text-align: justify;
+    color: var(--body-color);
 }
 
 .tag‐container {
@@ -131,6 +144,11 @@
   padding: 6px 12px;
   border-radius: 8px;
   white-space: nowrap;
+  transition: 0.3s;
+}
+.tag:hover{
+  background-color: var(--square-hover-color);
+  transition: 0.3s;
 }
 .bento {
   min-height: 0; /* NEW */
@@ -142,22 +160,15 @@
 @media (max-width: 639px) {
   .bento-container {
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-template:
       "a a a a a"
-      "a a a a a"
-      "a a a a a"
-      "c c c c c"
-      "c c c c c"
       "k k k k k"
-      "j i d d d"
-      "h h h h h"
       "h h h h h"
       "g g g g g"
-      "g g g g g"
+      "c c c c c"
+      "j j i i i"
       "e e e e f"
-      "e e e e f"
-      "l l l l l"
       "l l l l l"
       "m m m m m";
   }
@@ -166,16 +177,15 @@
 @media (min-width: 640px) and (max-width: 767px) {
   .bento-container {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-template:
       "a a a a a a"
-      "k k k k d d"
-      "h h h c c c"
-      "e e e e f i"
-      "g g g g j j"
+      "k k k k k k"
+      "c c c c c c"
+      "h h h h h h"
+      "g g g g g g"
+      "e e e j f i"
       "l l l l l l"
-      "l l l l l l"
-      "m m m m m m"
       "m m m m m m";
   }
 }
@@ -183,22 +193,14 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .bento-container {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(14, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-template:
       "a a a a a a c c"
-      "a a a a a a c c"
-      "a a a a a a e e"
-      "k k k k k k f f"
-      "h h h h d d g g"
-      "h h h h i i g g"
-      "j j j j i i g g"
-      "l l l l l l m m"
-      "l l l l l l m m"
-      "l l l l l l m m"
-      "l l l l l l m m"
-      "l l l l l l m m"
-      "l l l l l l m m"
-      "l l l l l l m m";
+      "k k k k k k k k"
+      "e e e f i i j j"
+      "h h h h g g g g"
+      "l l l l l l l l"
+      "m m m m m m m m";
   }
 }
 
@@ -207,7 +209,7 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(16, 1fr);
     grid-template:
-      "a a a a a a c c c d d"
+      "a a a a a a c c c e e"
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
@@ -227,14 +229,19 @@
 }
 
 @media (min-width: 1280px) and (max-width: 1535px) {
+
+  .profile-pic{
+  width: 150px;
+  height: 150px;
+}
   .bento-container {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(18, 1fr);
+    grid-template-rows: repeat(17, 1fr);
     grid-template:
-      "a a a a a a c c c d d d"
-      "a a a a a a c c c e e e"
-      "a a a a a a c c c e e e"
-      "a a a a a a c c c e e e"
+      "a a a a a a c c c c e e"
+      "a a a a a a c c c c e e"
+      "a a a a a a c c c c e e"
+      "a a a a a a c c c c e e"
       "a a a a a a k k k k k f"
       "h h h h h i i g g g g g"
       "h h h h h i i g g g g g"
@@ -242,25 +249,29 @@
       "h h h h h i i g g g g g"
       "h h h h h j j g g g g g"
       "h h h h h j j g g g g g"
-      "h h h h h l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l";
+      "l l l l l l l m m m m m"
+      "l l l l l l l m m m m m"
+      "l l l l l l l m m m m m"
+      "l l l l l l l m m m m m"
+      "l l l l l l l m m m m m"
+      "l l l l l l l m m m m m";
   }
 }
 
 @media (min-width: 1536px) {
+    .profile-pic{
+  width: 150px;
+  height: 150px;
+}
+
   .bento-container {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-template-rows: repeat(16, minmax(0, 1fr));
     grid-template:
-      "a a a a a a c c c d d d"
-      "a a a a a a c c c e e e"
-      "a a a a a a c c c e e e"
-      "a a a a a a c c c e e e"
+      "a a a a a a c c c c e e"
+      "a a a a a a c c c c e e"
+      "a a a a a a c c c c e e"
+      "a a a a a a c c c c e e"
       "a a a a a a k k k k k f"
       "h h h h h i i g g g g g"
       "h h h h h i i g g g g g"
@@ -268,10 +279,10 @@
       "h h h h h j j g g g g g"
       "h h h h h j j g g g g g"
       "h h h h h j j g g g g g"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l"
-      "m m m m m l l l l l l l";
+      "l l l l l l l l m m m m"
+      "l l l l l l l l m m m m"
+      "l l l l l l l l m m m m"
+      "l l l l l l l l m m m m"
+      "l l l l l l l l m m m m";
   }
 }

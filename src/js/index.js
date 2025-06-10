@@ -10,46 +10,65 @@ document.addEventListener("DOMContentLoaded", () => {
     htmlElement.classList.remove("dark");
   }
 
-  const toggleSwitch = document.querySelector(".toggle-switch");
-  const lightOption = document.getElementById("light");
-  const darkOption = document.getElementById("dark");
-  const slider = document.querySelector(".toggle-slider");
+  // Select all toggle switches
+  const toggleSwitches = document.querySelectorAll(".toggle-switch");
 
-  // Set toggleSwitch UI based on saved theme
-  if (htmlElement.classList.contains("dark")) {
-    darkOption.classList.add("active");
-    lightOption.classList.remove("active");
-    slider.style.transform = "translateX(0)";
-  } else {
-    lightOption.classList.add("active");
-    darkOption.classList.remove("active");
-    slider.style.transform = "translateX(100%)";
+  // Function to update all toggle switches UI based on theme
+  function updateToggleSwitches(theme) {
+    toggleSwitches.forEach((toggleSwitch) => {
+      const lightOption = toggleSwitch.querySelector(".light-option");
+      const darkOption = toggleSwitch.querySelector(".dark-option");
+      const slider = toggleSwitch.querySelector(".toggle-slider");
+
+      if (theme === "dark") {
+        darkOption.classList.add("active");
+        lightOption.classList.remove("active");
+        slider.style.transform = "translateX(0)";
+      } else {
+        lightOption.classList.add("active");
+        darkOption.classList.remove("active");
+        slider.style.transform = "translateX(100%)";
+      }
+    });
   }
 
-  toggleSwitch.addEventListener("click", () => {
-    if (darkOption.classList.contains("active")) {
-      darkOption.classList.remove("active");
-      lightOption.classList.add("active");
-      slider.style.transform = "translateX(100%)";
-      htmlElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      lightOption.classList.remove("active");
-      darkOption.classList.add("active");
-      slider.style.transform = "translateX(0)";
-      htmlElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
+  // Initialize toggle switches UI
+  updateToggleSwitches(htmlElement.classList.contains("dark") ? "dark" : "light");
+
+  // Add click event listener to each toggle switch
+  toggleSwitches.forEach((toggleSwitch) => {
+    toggleSwitch.addEventListener("click", () => {
+      const isDark = htmlElement.classList.contains("dark");
+      if (isDark) {
+        htmlElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        updateToggleSwitches("light");
+      } else {
+        htmlElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        updateToggleSwitches("dark");
+      }
+    });
   });
 });
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 30,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
   },
+        breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1536: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        }
+      },
   freeMode: true,
   loop: true,
   pagination: {

@@ -256,6 +256,17 @@
         </nav>
 
         <div class="buttons flex flex-1 justify-end gap-4 items-center">
+          <div class="theme-switch bento p-2 hidden lg:flex">
+            <div class="toggle-switch">
+              <div class="toggle-option active light-option" data-theme="light">
+                <i class="fa-solid fa-sun-bright"></i>
+              </div>
+              <div class="toggle-option dark-option" data-theme="dark">
+                <i class="fa-solid fa-moon-stars"></i>
+              </div>
+              <div class="toggle-slider"></div>
+            </div>
+          </div>
           <button class="contact-button hidden lg:flex">
             ارتباط با من
             <i class="fa-solid fa-phone"></i>
@@ -297,6 +308,18 @@
           </ul>
         </nav>
 
+        <div class="theme-switch bento p-2">
+          <div class="toggle-switch">
+              <div class="toggle-option active light-option" data-theme="light">
+                <i class="fa-solid fa-sun-bright"></i>
+              </div>
+              <div class="toggle-option dark-option" data-theme="dark">
+                <i class="fa-solid fa-moon-stars"></i>
+              </div>
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+
         <button class="contact-button">
           ارتباط با من
           <i class="fa-solid fa-phone"></i>
@@ -304,22 +327,11 @@
       </div>
     </div>
     <div class="bento-container">
-      <div class="theme-switch bento p-3">
-        <div class="toggle-switch">
-          <div class="toggle-option active" id="light">
-            <i class="fa-solid fa-sun-bright fa-lg"></i>
-          </div>
-          <div class="toggle-option" id="dark">
-            <i class="fa-solid fa-moon-stars fa-lg"></i>
-          </div>
-          <div class="toggle-slider"></div>
-        </div>
-      </div>
       <div class="introduction bento bento-boxes flex flex-col gap-8">
         <div class="flex flex-row gap-8 items-center">
           <div class="image-container">
             <img
-              class="w-28 h-28 rounded-full"
+              class="profile-pic rounded-full"
               src="./src/img/Profile Picture.jpg"
               alt="Borhan Mortazavi Picture"
             />
@@ -327,13 +339,13 @@
           <div
             class="header-container flex flex-col gap-3 text-[var(--focus-color)]"
           >
-            <h1 class="text-4xl font-black">برهان مرتضوی میلانی</h1>
+            <h1 class="xl:text-4xl md:text-3xl  text-2xl font-black">برهان مرتضوی میلانی</h1>
             <span class="text-[var(--body-color)]"
               >برنامه نویس فول استک و طراح گرافیک</span
             >
           </div>
         </div>
-        <p class="text-[var(--body-color)] text-base">
+        <p class="introduction-paragraph paragraph">
           سلام 👋 من عاشق کدنویسی، طراحی و خلق چیزای جدیدم. از طراحی ظاهر سایت
           گرفته تا پیاده‌سازی پشت‌صحنه‌اش با JavaScript – همه‌اش کار منه! وقتی
           پشت سیستمم نیستم، حتما دارم به طرح‌های گرافیکی یا تجربه‌های کاربری
@@ -343,7 +355,7 @@
       <div class="education bento bento-boxes flex flex-col gap-6">
         <h2 class="text-2xl font-bold">تحصیلات</h2>
         <div
-          class="education-container flex flex-col gap-10 justify-start h-[100%]"
+          class="education-container flex flex-col gap-10 justify-around h-[100%]"
         >
           <div class="edu flex flex-row items-center justify-between gap-4">
             <div class="edu-info flex flex-col">
@@ -365,46 +377,45 @@
       </div>
       <div class="languages bento bento-boxes flex flex-col gap-6">
         <h2 class="text-2xl font-bold">زبان‌ها</h2>
-        <div class="language-container flex flex-col gap-6 justify-between">
+        <div
+          class="language-container flex flex-col gap-6 justify-around h-[100%] w-[100%]"
+        >
           <div
             class="language persian flex flex-row justify-between items-center"
           >
-            <div class="lang flex flex-row gap-4 items-center flex-3">
+            <div class="lang flex flex-row gap-2 items-center flex-3">
               <img src="./src/img/per.svg" alt="" />
               <span class="text-sm">فارسی</span>
             </div>
             <div
-              class="level flex flex-row gap-1 items-center justify-between flex-2"
+              class="level flex flex-row gap-1 items-center justify-end flex-2"
             >
-              <span class="font-bold">سطح:</span>
               <span>Native</span>
             </div>
           </div>
           <div
             class="language english flex flex-row justify-between items-center"
           >
-            <div class="lang flex flex-row gap-4 items-center flex-3">
+            <div class="lang flex flex-row gap-2 items-center flex-3">
               <img src="./src/img/eng.svg" alt="" />
               <span class="text-sm">انگلیسی</span>
             </div>
             <div
-              class="level flex flex-row gap-1 items-center justify-between flex-2"
+              class="level flex flex-row gap-1 items-center justify-end flex-2"
             >
-              <span class="font-bold">سطح:</span>
               <span>Native</span>
             </div>
           </div>
           <div
             class="language turkish flex flex-row justify-between items-center"
           >
-            <div class="lang flex flex-row gap-4 items-center flex-3">
+            <div class="lang flex flex-row gap-2 items-center flex-3">
               <img src="./src/img/tur.svg" alt="" />
               <span class="text-sm">ترکی</span>
             </div>
             <div
-              class="level flex flex-row gap-1 items-center justify-between flex-2"
+              class="level flex flex-row gap-1 items-center justify-end flex-2"
             >
-              <span class="font-bold">سطح:</span>
               <span>C1</span>
             </div>
           </div>
@@ -529,17 +540,11 @@
               <span class="text-xs text-gray-600">1398 - 1399</span>
             </div>
           </div>
-          <p class="work-description">
-            از سال ۲۰۲۲ با استفاده از وردپرس و المنتور طراحی وب‌سایت را شروع
-            کردم و علاقه ام به این رشته بیش از پیش شد. در نتیجه، HTML، CSS و
-            JavaScript را شروع به یادگیری کردم. در سال ۲۰۲۴ در یک دورهٔ
-            توسعه‌دهندهٔ فول‌استک در مجتمع فنی تبریز ثبت‌نام کردم تا بیشتر
-            JavaScript را بیاموزم و بتوانم وب‌سایت‌ها را هم به شکل بک‌اند و هم
-            در فرانت‌اند توسعه بدهم. در حال حاضر سفارش‌های طراحی وب‌سایت از
-            شرکت‌ها را قبول و اجرا می‌کنم. وب‌سایت خودم را توسعه داده‌ام و
-            علاقه‌مندم تجربهٔ بیشتری کسب کنم تا بتوانم وب‌سایت مشتریان و همچنین
-            وب‌سایت خودم را به شکوفایی برسانم و به مشتریان کمک کنم تا به مخاطبان
-            گسترده‌تری دسترسی پیدا کرده و در نتیجه کسب‌وکارشان را رشد دهند.
+          <p class="work-description paragraph">
+            تمرکز من در وظایف روزمره، رفع نیاز کاربران و دقت به جزئیات پروژه
+            هاست که باعث شده نمونه کارهای متمایز و کاربردی در کارنامه‌ام داشته
+            باشم. طراحی بصری، برنامه نویسی و تجربه کار بر روی سئو وبسایت ها از
+            تجربیات بنده در طول سال های اخیر است.
           </p>
         </div>
       </div>
@@ -594,18 +599,18 @@
           <h2 class="text-xl font-bold">Github</h2>
         </button>
       </div>
-      <div class="blogs bento bento-boxes flex flex-col gap-6">
+      <div class="blogs bento bento-boxes flex flex-col gap-6 items-center">
         <h2 class="text-xl font-bold">آخرین مطالب</h2>
-        <div class="blogs-container flex flex-col">
+        <div class="blogs-container flex flex-col gap-6 justify-around">
           <a
-            class="blog-post flex flex-row justify-between items-center"
+            class="blog-post flex flex-col justify-center items-center gap-3"
             href="#"
           >
-            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
+            <h3 class="blog-title flex-4 one-line-text blog-links">
               مزیت های فریمورک Next Js نسبت به React
             </h3>
             <div
-              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
+              class="post-details flex flex-row justify-center items-start gap-2 flex-1"
             >
               <div class="date flex flex-row gap-1 items-center">
                 <i class="fa-regular fa-calendar fa-xs"></i>
@@ -618,18 +623,18 @@
             </div>
           </a>
           <a
-            class="blog-post flex flex-row justify-between items-center"
+            class="blog-post flex flex-col justify-center items-center gap-3"
             href="#"
           >
-            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
-              آموزش استفاده از B-Crypt در Express JS
+            <h3 class="blog-title flex-4 one-line-text blog-links">
+              مزیت های فریمورک Next Js نسبت به React
             </h3>
             <div
-              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
+              class="post-details flex flex-row justify-center items-start gap-2 flex-1"
             >
               <div class="date flex flex-row gap-1 items-center">
                 <i class="fa-regular fa-calendar fa-xs"></i>
-                <span class="text-xs one-line-text">29 فروردین 1404</span>
+                <span class="text-xs one-line-text">25 اردیبهشت 1404</span>
               </div>
               <div class="author flex flex-row gap-1 items-center">
                 <i class="fa-regular fa-user fa-xs"></i>
@@ -638,38 +643,18 @@
             </div>
           </a>
           <a
-            class="blog-post flex flex-row justify-between items-center"
+            class="blog-post flex flex-col justify-center items-center gap-3"
             href="#"
           >
-            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
-              معرفی کتابخانه Passport برای ثبت نام کاربران
+            <h3 class="blog-title flex-4 one-line-text blog-links">
+              مزیت های فریمورک Next Js نسبت به React
             </h3>
             <div
-              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
+              class="post-details flex flex-row justify-center items-start gap-2 flex-1"
             >
               <div class="date flex flex-row gap-1 items-center">
                 <i class="fa-regular fa-calendar fa-xs"></i>
-                <span class="text-xs one-line-text">12 اسفند 1403</span>
-              </div>
-              <div class="author flex flex-row gap-1 items-center">
-                <i class="fa-regular fa-user fa-xs"></i>
-                <span class="text-xs one-line-text">برهان مرتضوی</span>
-              </div>
-            </div>
-          </a>
-          <a
-            class="blog-post flex flex-row justify-between items-center"
-            href="#"
-          >
-            <h3 class="blog-title text-sm flex-4 one-line-text blog-links">
-              معرفی کتابخانه Passport برای ثبت نام کاربران
-            </h3>
-            <div
-              class="post-details flex flex-col justify-center items-start gap-2 flex-1"
-            >
-              <div class="date flex flex-row gap-1 items-center">
-                <i class="fa-regular fa-calendar fa-xs"></i>
-                <span class="text-xs one-line-text">12 اسفند 1403</span>
+                <span class="text-xs one-line-text">25 اردیبهشت 1404</span>
               </div>
               <div class="author flex flex-row gap-1 items-center">
                 <i class="fa-regular fa-user fa-xs"></i>
