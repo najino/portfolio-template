@@ -167,8 +167,8 @@ transition: 0.3s;
       "h h h h h"
       "g g g g g"
       "c c c c c"
-      "j j i i i"
-      "e e e e f"
+      "j j f i i"
+      "e e e e e"
       "l l l l l"
       "m m m m m";
   }
@@ -180,11 +180,11 @@ transition: 0.3s;
     grid-template-rows: repeat(8, 1fr);
     grid-template:
       "a a a a a a"
-      "k k k k k k"
-      "c c c c c c"
+      "k k k k i i"
       "h h h h h h"
+      "c c c c c c"
       "g g g g g g"
-      "e e e j f i"
+      "e e e e f j"
       "l l l l l l"
       "m m m m m m";
   }
@@ -193,12 +193,14 @@ transition: 0.3s;
 @media (min-width: 768px) and (max-width: 1023px) {
   .bento-container {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-template:
-      "a a a a a a c c"
+      "a a a a a a a a"
+      "f f f i i j j j"
       "k k k k k k k k"
-      "e e e f i i j j"
-      "h h h h g g g g"
+      "h h h h h h h h"
+      "e e e e c c c c"
+      "g g g g g g g g"
       "l l l l l l l l"
       "m m m m m m m m";
   }
@@ -207,20 +209,15 @@ transition: 0.3s;
 @media (min-width: 1024px) and (max-width: 1279px) {
   .bento-container {
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-rows: repeat(11, 1fr);
     grid-template:
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
       "a a a a a a k k k k f"
-      "h h h h h i i g g g g"
-      "h h h h h i i g g g g"
-      "h h h h h i i g g g g"
-      "h h h h h i i g g g g"
-      "h h h h h j j g g g g"
-      "h h h h h j j g g g g"
-      "h h h h h l l l l l l"
+      "h h h h h h g g g g g"
+      "h h h h h h i i j j j"
       "m m m m m l l l l l l"
       "m m m m m l l l l l l"
       "m m m m m l l l l l l"
