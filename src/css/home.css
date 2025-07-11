@@ -3,6 +3,10 @@
   grid-gap: 1em;
 }
 
+header{
+  grid-area: z;
+}
+
 .introduction {
   grid-area: a;
 }
@@ -150,6 +154,7 @@ transition: 0.3s;
   background-color: var(--square-hover-color);
   transition: 0.3s;
 }
+
 .bento {
   min-height: 0; /* NEW */
   min-width: 0; /* NEW; needed for Firefox */
@@ -160,8 +165,9 @@ transition: 0.3s;
 @media (max-width: 639px) {
   .bento-container {
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     grid-template:
+      "z z z z z"
       "a a a a a"
       "k k k k k"
       "h h h h h"
@@ -177,8 +183,9 @@ transition: 0.3s;
 @media (min-width: 640px) and (max-width: 767px) {
   .bento-container {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-template:
+      "z z z z z z"
       "a a a a a a"
       "k k k k i i"
       "h h h h h h"
@@ -193,8 +200,9 @@ transition: 0.3s;
 @media (min-width: 768px) and (max-width: 1023px) {
   .bento-container {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-template:
+      "z z z z z z z z"
       "a a a a a a a a"
       "f f f i i j j j"
       "k k k k k k k k"
@@ -209,8 +217,9 @@ transition: 0.3s;
 @media (min-width: 1024px) and (max-width: 1279px) {
   .bento-container {
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     grid-template:
+      "z z z z z z z z z z z"
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
       "a a a a a a c c c e e"
@@ -233,8 +242,9 @@ transition: 0.3s;
 }
   .bento-container {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(17, 1fr);
+    grid-template-rows: repeat(18, 1fr);
     grid-template:
+      "z z z z z z z z z z z z"
       "a a a a a a c c c c e e"
       "a a a a a a c c c c e e"
       "a a a a a a c c c c e e"
@@ -263,8 +273,9 @@ transition: 0.3s;
 
   .bento-container {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-template-rows: repeat(16, minmax(0, 1fr));
+    grid-template-rows: repeat(17, minmax(0, 1fr));
     grid-template:
+      "z z z z z z z z z z z z"
       "a a a a a a c c c c e e"
       "a a a a a a c c c c e e"
       "a a a a a a c c c c e e"

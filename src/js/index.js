@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Initialize toggle switches UI
-  updateToggleSwitches(htmlElement.classList.contains("dark") ? "dark" : "light");
+  updateToggleSwitches(
+    htmlElement.classList.contains("dark") ? "dark" : "light"
+  );
 
   // Add click event listener to each toggle switch
   toggleSwitches.forEach((toggleSwitch) => {
@@ -50,31 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
-
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-        breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1536: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        }
-      },
-  freeMode: true,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
 });
 
 // Mobile menu overlay toggle
@@ -97,3 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// hover effect
+
+document.getElementById("bento-container").onmousemove = (e) => {
+  for (const card of document.getElementsByClassName("bento-boxes")) {
+    const rect = card.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  }
+};

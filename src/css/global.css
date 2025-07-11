@@ -13,7 +13,8 @@
   --gradient-text-color: rgba(0, 0, 0, 0.801);
   --linkhover-color: #000000;
   --link-color: #1a73e8;
-  --bento-color: #d8d1d125;
+  --bento-color: #d9edff94;
+  --bentoborder-color: #2c2c2c28;
   --star-color: #313168;
   --active-color: #16293f;
   --disabled-color: #afafaf;
@@ -33,6 +34,8 @@
     rgba(22, 41, 63, 0) 100%
   );
   --contact-hover-text-color: rgba(22, 41, 63, 1);
+  --hover-color1: rgba(255, 255, 255, 0.6);
+  --hover-color2: rgba(255, 255, 255, 0.3);
 }
 
 html.dark {
@@ -44,7 +47,8 @@ html.dark {
   --text-color: #bebebe;
   --linkhover-color: #fff;
   --link-color: #8ab4f8;
-  --bento-color: #00000036;
+  --bento-color: #03000c73;
+  --bentoborder-color: #64646452;
   --star-color: #fff;
   --active-color: #fff;
   --disabled-color: #888;
@@ -63,11 +67,14 @@ html.dark {
     rgba(255, 255, 255, 0) 100%
   );
   --contact-hover-text-color: rgba(255, 255, 255, 1);
+  --hover-color1: rgba(73, 74, 90, 0.6);
+  --hover-color2: rgba(73, 74, 90, 0.3);
 }
 
 header {
   width: var(--responsive-size);
   max-width: var(--responsive-size);
+  border-radius: 1em;
 }
 
 .header-padding{
@@ -192,6 +199,7 @@ a:hover {
 
   transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
   z-index: 0;
+  overflow: hidden;
 }
 
 .contact-button::before {
@@ -218,16 +226,50 @@ a:hover {
 }
 
 .bento {
-  background-color: var(--bento-color);
   border-radius: 1em;
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(128, 128, 128, 0.178);
+  background-color: var(--bentoborder-color);
 }
 .bento-boxes {
-  padding: 1.4em;
   color: var(--text-color);
+  position: relative;
+}
+.bento-boxes > .bento-content{
+    border-radius: inherit;
+    background-color: var(--bento-color);
+    padding: 1.4em;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    backdrop-filter: blur(3px);
+    margin: 1px;
+    position: relative;
+    z-index: 4;
 }
 
+.bento-boxes::before, .bento-boxes > .card-border{
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 400ms;
+}
+.bento-boxes::before{
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),var(--hover-color1),transparent 40%);
+  z-index: 3;
+}
+.bento-boxes > .card-border{
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),var(--hover-color2),transparent 40%);
+  z-index: 1;
+}
+.bento-boxes:hover::before{
+  opacity: 1;
+}
+#bento-container:hover > .bento-boxes > .card-border{
+  opacity: 1;
+}
 .darkmodebtn {
   color: var(--darkbtn-color);
 }
@@ -313,7 +355,6 @@ a:hover {
   src: url("../font/woff/IRANYekanXVF.woff") format("woff"),
     url("../font/woff2/IRANYekanXVF.woff2") format("woff2");
 }
-
 /* Mobile Menu Overlay Styles */
 .mobile-menu-overlay {
   position: fixed;
