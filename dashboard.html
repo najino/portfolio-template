@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>داشبورد | مدیریت</title>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FontAwesome library -->
+    <link rel="stylesheet" href="./src/libraries/fontawesome/css/all.min.css" />
+    <script src="./src/libraries/fontawesome/js/all.min.js"></script>
+    <!-- global css -->
+    <link rel="stylesheet" href="./src/css/dashboard-global.css" />
+    <!-- login page css -->
+    <link rel="stylesheet" href="./src/css/dashboard.css" />
+    <link rel="icon" type="image/x-icon" href="/src/img/logo.ico" />
+  </head>
+  <body>
+    <div class="dashboard-container flex flex-row w-[100vw]">
+      <div class="navigation flex-2">
+        <div class="logo-container">
+          <a
+            href="/dashboard.html"
+            class="logo flex justify-start items-center gap-2"
+          >
+            <img
+              src="./src/img/logo-gradient.svg"
+              alt="portfolio logo"
+              class="w-14"
+            />
+            <span class="font-bold text-lg">بنتوفولیو</span>
+          </a>
+        </div>
+        <nav class="menu flex flex-col gap-4">
+          <span>منو</span>
+          <a
+            class="menu-item flex flex-row gap-3 items-center justify-start"
+            href="#"
+          >
+            <i class="fa-solid fa-grid-horizontal fa-xl"></i>
+            داشبورد
+          </a>
+
+          <a
+            class="menu-item flex flex-row gap-3 items-center justify-start"
+            href="#"
+          >
+            <i class="fa-solid fa-pager fa-xl"></i>
+            محتوای صفحه
+          </a>
+        </nav>
+      </div>
+      <div class="dashboard flex-10">
+        <div class="top-bar flex flex-row items-center justify-between">
+          <a href="#">
+            <i class="icon fa-solid fa-magnifying-glass fa-lg"></i>
+          </a>
+          <div class="flex flex-row gap-6 items-center">
+            <div class="theme-switch bento p-2">
+              <div class="toggle-switch">
+                <div
+                  class="toggle-option active light-option"
+                  data-theme="light"
+                >
+                  <i class="fa-solid fa-sun-bright"></i>
+                </div>
+                <div class="toggle-option dark-option" data-theme="dark">
+                  <i class="fa-solid fa-moon-stars"></i>
+                </div>
+                <div class="toggle-slider"></div>
+              </div>
+            </div>
+                      <a href="#">
+            <i class="icon fa-solid fa-gear fa-lg"></i>
+          </a>
+            <div class="admin-info flex flex-row justify-between items-center gap-2">
+              <img
+                class="admin-pic"
+                src="./src/img/Profile Picture.jpg"
+                alt=""
+              />
+              
+              <div class="info flex flex-col gap-1">
+                <span class="role text-xs">مدیر سایت</span>
+                <span class="username text-sm font-semibold">برهان مرتضوی</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>
