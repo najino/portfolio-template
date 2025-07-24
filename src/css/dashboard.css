@@ -1,76 +1,83 @@
-* {
-  box-sizing: border-box;
-}
-.dashboard-container {
-  min-height: 100vh;
-}
-
-.navigation {
+.dashboard-content-container {
+  grid-template:
+    "a a a b b c"
+    "d d d d d d";
 }
 
-.logo-container {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 1em;
-  height: 70px;
-  color: var(--text-color);
-box-shadow: var(--bentoborder-color) -8px 2px 8px 0px;
-z-index: 2;
+.visit-chart {
+  grid-area: a;
 }
 
-.top-bar {
+.user-chart {
+  grid-area: b;
+}
+
+.comments-stats {
+  grid-area: c;
+}
+
+.posts-table {
+  grid-area: d;
+}
+
+#apexChartTrafficStats {
+  height: 100%;
+}
+
+.chart-container {
   width: 100%;
-  background-color: var(--bg-color);
-  height: 70px;
-  box-shadow: var(--bentoborder-color) -8px 2px 8px 0px;
-  padding: 1em 1.5em;
 }
 
-nav.menu {
-    height: 100%;
-  width: 100%;
-  padding: 1em;
-box-shadow: var(--bentoborder-color) 0px 10px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+@media (max-width: 639px) {
+  .dashboard-content-container {
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d";
+  }
 }
 
-.menu-item {
-    color: var(--text-color);
-  padding: 10px;
-  border-radius: 16px;
+@media (min-width: 640px) and (max-width: 767px) {
+  .dashboard-content-container {
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d";
+  }
 }
 
-.menu-item:hover{
-    color: var(--linkhover-color);
-    transition: 0.2s;
-    background-color: var(--square-hover-color);
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dashboard-content-container {
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d";
+  }
 }
 
-.dashboard {
-  background-color: var(--bento-color);
-  transition: 0.2s;
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .dashboard-content-container {
+    grid-template:
+      "a a a b b c"
+      "d d d d d d";
+  }
 }
 
-.icon{
-    color: var(--text-color);
-     transition: color 0.2s;
-}
-.icon:hover{
-    transition: color 0.2s;
-    color: var(--linkhover-color);
-}
-
-.admin-info{
-    cursor: pointer;
-        color: var(--text-color);
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .dashboard-content-container {
+    grid-template:
+      "a a a b b c"
+      "d d d d d d";
+  }
 }
 
-.admin-pic{
-    width: 45px;
-    height: 45px;
-    border-radius: 100%;
-}
-
-.seperator{
-    color: var(--disabled-color);
+@media (min-width: 1536px) {
+  .dashboard-content-container {
+    grid-template:
+      "a a a b b c"
+      "d d d d d d";
+  }
 }

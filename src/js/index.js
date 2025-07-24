@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedTheme === "dark" || !savedTheme) {
     htmlElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
+    window.currentTheme = "dark";
   } else {
     htmlElement.classList.remove("dark");
+    window.currentTheme = "light";
   }
 
   // Select all toggle switches
@@ -44,10 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isDark) {
         htmlElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
+        window.currentTheme = "light";
         updateToggleSwitches("light");
       } else {
         htmlElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
+        window.currentTheme = "dark";
         updateToggleSwitches("dark");
       }
     });
