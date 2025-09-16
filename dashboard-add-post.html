@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="./src/css/dashboard-add-post.css" />
     <link rel="icon" type="image/x-icon" href="/src/img/logo.ico" />
     <!-- add text editor libarary -->
-    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    	<script src="./src/libraries/ckeditor/ckeditor.js"></script>
+	<script src="./src/libraries/ckeditor/samples/js/sample.js"></script>
   </head>
   <body>
     <div class="dashboard-container flex flex-row w-[100vw]">
@@ -78,14 +79,14 @@
             class="menu-item flex flex-row gap-3 items-center justify-start text-sm"
             href="./dashboard-page-settings.html"
           >
-            <i class="fa-solid fa-comments fa-xl"></i>
+            <i class="fa-solid fa-memo fa-xl"></i>
             ویرایش صفحه اصلی
           </a>
           <a
             class="menu-item flex flex-row gap-3 items-center justify-start text-sm"
             href="./dashboard-page-settings.html"
           >
-            <i class="fa-solid fa-comments fa-xl"></i>
+            <i class="fa-solid fa-briefcase fa-xl"></i>
             نمونه کار ها
           </a>
           <span class="seperator text-sm">کاربران</span>
@@ -192,13 +193,22 @@
                 />
               </div>
 
-              <div class="mb-5">
+              <div class="mb-5 post-content">
                 <label
                   for="title"
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >محتوای نوشته</label
                 >
-                <textarea id="editor"></textarea>
+                	<div class="adjoined-bottom">
+		<div class="grid-container">
+			<div class="grid-width-100">
+				<div id="editor">
+					<h1>Hello world!</h1>
+					<p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
               </div>
 
               <div class="flex flex-col mb-5 lg:flex-row gap-4 justify-stretch items-top">
@@ -397,14 +407,14 @@
             class="menu-item flex flex-row gap-3 items-center justify-start text-sm"
             href="./dashboard-page-settings.html"
           >
-            <i class="fa-solid fa-comments fa-xl"></i>
+            <i class="fa-solid fa-memo fa-xl"></i>
             ویرایش صفحه اصلی
           </a>
           <a
             class="menu-item flex flex-row gap-3 items-center justify-start text-sm"
             href="./dashboard-page-settings.html"
           >
-            <i class="fa-solid fa-comments fa-xl"></i>
+            <i class="fa-solid fa-briefcase fa-xl"></i>
             نمونه کار ها
           </a>
           <span class="seperator text-sm">کاربران</span>
@@ -441,8 +451,7 @@
     <script src="./src/js/overlay.js"></script>
 
     <script>
-      CKEDITOR.addCss(".cke_editable { background-color: gray; color: white }");
-      CKEDITOR.replace("editor");
+initSample();
     </script>
   </body>
 </html>
